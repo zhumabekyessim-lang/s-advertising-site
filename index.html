@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<!--
+THESIS: сайт — раскрытый сэмплбук производителя POSM на столе закупщика; отказ от
+категорийного «тёмного корпоративного лендинга» с иконками, глоу и стеклом.
+OWN-WORLD: графитовый стол шоурума; веер материальных образцов (акрил, МДФ, металл,
+ПЭТ, картон); инженерные бирки в mono; каталожные листы бумажно-белые; один синий
+акцент бренда. Oswald + Source Sans 3 + Roboto Mono.
+STORY: procurement-менеджер FMCG узнаёт язык образцов и спецификаций, верит
+в производство полного цикла, пишет в WhatsApp за расчётом по ТЗ.
+FIRST VIEWPORT: слева — «Производство POSM и рекламных конструкций», подзаголовок
+полного цикла, два CTA; справа — веер образцов раскрывается вокруг болта;
+внизу бирка ТОО · Алматы · Казахстан и СНГ.
+FORM: сэмплбук производителя — №3 моего ранжированного списка, назначен жеребьёвкой
+(key ca2a546b); staging — вертикальный каталог с вкладками-разделителями,
+континуальный 3D-мир отклонён по бюджету производительности (телефон, GH Pages).
+-->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S-Advertising Company — производство POSM и рекламных конструкций в Алматы</title>
+<meta name="description" content="Производство POSM, торгового оборудования и оформления торговых точек полного цикла: дизайн, КД, УФ- и широкоформатная печать, монтаж и сервис. Собственный цех 1000 м² в Алматы. Казахстан и СНГ.">
+<meta property="og:title" content="S-Advertising Company — производство POSM полного цикла">
+<meta property="og:description" content="Паллетные выкладки, дисплеи, арки, LED и лайтбоксы для FMCG. Собственный цех 1000 м² в Алматы, 2000+ проектов.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2316181d'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='bold' fill='%232775e2' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --desk:#16181d;
+  --raised:#1d2026;
+  --edge:#2b2f37;
+  --sheet:#f4f2ed;
+  --ink:#f2f3f5;
+  --body:#c6cad2;
+  --tag:#8f97a5;
+  --caption:#d6dae0;
+  --white:#ffffff;
+  --blue:#2775e2;
+  --blue-fill:#1f6ad4;
+  --blue-deep:#1a5cb8;
+  --blue-bright:#82b2f4;
+  --sheet-ink:#1d2026;
+  --sheet-ink-2:#454b54;
+  --sheet-ink-3:#5a6068;
+  --acr:#2e6fc2;--acr-hi:#3a80d6;--acr-lo:#245aa0;
+  --mdf:#8a6b4a;--mdf-hi:#96775a;--mdf-lo:#6f5238;
+  --met:#9aa2ad;--met-hi:#b3bac4;--met-lo:#7d8590;
+  --pet:#d8dde3;--pet-hi:#eef1f5;--pet-lo:#bcc3cc;
+  --card:#b08d5f;--card-hi:#c19c6c;--card-lo:#94743e;--card-ink:#241c11;
+  --steel-hi:#c6ccd4;--steel:#828a96;--steel-deep:#5c636e;--steel-core:#4a505a;
+  --plate-edge:#3a4048;--plate-hi:#262a31;--plate-lo:#1c1f25;--plate-digit:#e8eaee;
+  --scrim:rgba(10,12,15,.94);
+  --scrim-soft:rgba(10,12,15,.88);
+  --sh-1:rgba(0,0,0,.25);
+  --sh-2:rgba(0,0,0,.45);
+  --sh-3:rgba(0,0,0,.6);
+  --sh-4:rgba(0,0,0,.7);
+  --grain:rgba(0,0,0,.07);
+  --disp:"Oswald","Arial Narrow",sans-serif;
+  --text:"Source Sans 3","Segoe UI",sans-serif;
+  --mono:"Roboto Mono",Consolas,monospace;
+  --fs-display:clamp(2.1rem,4.3vw,3.4rem);
+  --fs-h2:clamp(1.6rem,3.5vw,2.4rem);
+  --fs-plate:clamp(1.7rem,3.4vw,2.6rem);
+  --fs-h3:1.35rem;
+  --fs-lead:1.125rem;
+  --fs-body:1.0625rem;
+  --fs-small:.95rem;
+  --fs-note:.875rem;
+  --fs-mono:.8rem;
+  --fs-mono-sm:.72rem;
+  --w:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--desk);
+  color:var(--body);
+  font-family:var(--text);
+  font-size:var(--fs-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--blue-bright);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
+h1,h2,h3{color:var(--ink);font-family:var(--disp);font-weight:600;text-wrap:balance}
+:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
+
+/* ── шапка ── */
+header.top{
+  position:sticky;top:0;z-index:50;
+  background:var(--scrim-soft);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--edge);
+}
+.top-in{display:flex;align-items:center;gap:28px;max-width:var(--w);margin:0 auto;padding:14px 24px}
+.logo{display:flex;align-items:baseline;gap:2px;font-family:var(--disp);font-weight:600;font-size:var(--fs-lead);letter-spacing:.04em;color:var(--ink);white-space:nowrap}
+.logo b{color:var(--blue-bright);font-size:var(--fs-h3);line-height:1}
+.logo small{font-family:var(--mono);font-weight:400;font-size:var(--fs-mono-sm);letter-spacing:.22em;color:var(--tag);margin-left:8px;transform:translateY(-2px)}
+nav.menu{display:flex;gap:22px;margin-left:auto}
+nav.menu a{color:var(--body);font-size:var(--fs-small);padding:6px 2px}
+nav.menu a:hover{color:var(--ink);text-decoration:none}
+.langs{display:flex;border:1px solid var(--edge);border-radius:4px;overflow:hidden}
+.langs button{
+  background:none;border:0;color:var(--tag);font-family:var(--mono);font-size:var(--fs-mono);
+  padding:7px 11px;cursor:pointer;min-width:44px;min-height:36px;
+}
+.langs button+button{border-left:1px solid var(--edge)}
+.langs button[aria-pressed="true"]{background:var(--blue-fill);color:var(--white)}
+.langs button:hover:not([aria-pressed="true"]){color:var(--ink)}
+.top-wa{
+  display:inline-block;background:var(--blue-fill);color:var(--white);font-weight:600;font-size:var(--fs-small);
+  padding:9px 18px;border-radius:4px;white-space:nowrap;
+}
+.top-wa:hover{background:var(--blue-deep);text-decoration:none}
+
+/* ── hero ── */
+.hero{padding:84px 0 40px}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center}
+.hero h1{font-size:var(--fs-display);line-height:1.05;letter-spacing:.01em;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--blue-bright)}
+.hero .sub{margin:26px 0 34px;max-width:56ch;font-size:var(--fs-lead)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.btn{
+  display:inline-block;font-weight:700;font-size:var(--fs-body);border-radius:4px;
+  padding:14px 28px;min-height:48px;
+}
+.btn-blue{background:var(--blue-fill);color:var(--white)}
+.btn-blue:hover{background:var(--blue-deep);text-decoration:none}
+.btn-ghost{border:1px solid var(--edge);color:var(--ink);background:var(--raised)}
+.btn-ghost:hover{border-color:var(--tag);text-decoration:none}
+.hero-tag{
+  margin-top:40px;display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);
+  border:1px solid var(--edge);border-radius:4px;padding:7px 12px;background:var(--raised);
+}
+.hero-tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue)}
+
+/* веер образцов */
+.fan{position:relative;height:430px;display:flex;justify-content:center}
+.swatch{
+  position:absolute;bottom:18px;left:50%;width:158px;height:250px;margin-left:-79px;
+  border-radius:10px 10px 12px 12px;
+  transform-origin:50% calc(100% - 26px);
+  transform:rotate(0deg);
+  transition:transform .9s cubic-bezier(.16,1,.3,1),box-shadow .3s;
+  box-shadow:0 10px 28px var(--sh-2);
+  padding:18px 14px;
+  display:flex;flex-direction:column;gap:4px;
+}
+.fan.open .swatch:nth-child(1){transform:rotate(-34deg)}
+.fan.open .swatch:nth-child(2){transform:rotate(-17deg)}
+.fan.open .swatch:nth-child(3){transform:rotate(0deg)}
+.fan.open .swatch:nth-child(4){transform:rotate(17deg)}
+.fan.open .swatch:nth-child(5){transform:rotate(34deg)}
+/* алмазный порядок слоёв: центр сверху, края снизу — как у раскрытого веера */
+.swatch:nth-child(1){z-index:1}
+.swatch:nth-child(2){z-index:2}
+.swatch:nth-child(3){z-index:3}
+.swatch:nth-child(4){z-index:2}
+.swatch:nth-child(5){z-index:1}
+/* подписи правых карт — к правому (открытому) краю */
+.swatch:nth-child(4),.swatch:nth-child(5){align-items:flex-end;text-align:right}
+.fan.open .swatch:nth-child(1){transition-delay:.05s}
+.fan.open .swatch:nth-child(2){transition-delay:.15s}
+.fan.open .swatch:nth-child(4){transition-delay:.25s}
+.fan.open .swatch:nth-child(5){transition-delay:.35s}
+.swatch:hover{box-shadow:0 18px 40px var(--sh-3);z-index:7}
+/* отверстие с кольцом у оси */
+.swatch::after{
+  content:"";position:absolute;left:50%;bottom:16px;width:14px;height:14px;margin-left:-7px;
+  border-radius:50%;background:var(--desk);
+  box-shadow:0 0 0 3px rgba(255,255,255,.28),inset 0 1px 2px var(--sh-3);
+}
+.swatch .m-name{font-family:var(--disp);font-weight:600;font-size:var(--fs-body);letter-spacing:.08em;text-transform:uppercase}
+.swatch .m-tech{font-family:var(--mono);font-size:var(--fs-mono-sm);letter-spacing:.02em;opacity:.85}
+.sw-acrylic{
+  background:linear-gradient(155deg,var(--acr-hi) 0%,var(--acr) 45%,var(--acr-lo) 100%);
+  color:var(--white);
+}
+.sw-acrylic::before{content:"";position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.22) 42%,transparent 54%)}
+.sw-mdf{
+  background:
+    repeating-linear-gradient(94deg,var(--grain) 0 2px,transparent 2px 7px),
+    linear-gradient(160deg,var(--mdf-hi),var(--mdf) 60%,var(--mdf-lo));
+  color:var(--white);
+}
+.sw-metal{
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.09) 0 1px,transparent 1px 3px),
+    linear-gradient(150deg,var(--met-hi),var(--met) 55%,var(--met-lo));
+  color:var(--sheet-ink);
+}
+.sw-pet{
+  background:linear-gradient(150deg,var(--pet-hi),var(--pet) 55%,var(--pet-lo));
+  color:var(--sheet-ink);
+}
+.sw-pet::before{content:"";position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.5) 46%,transparent 58%)}
+.sw-cardboard{
+  background:
+    repeating-linear-gradient(0deg,var(--grain) 0 3px,transparent 3px 9px),
+    linear-gradient(160deg,var(--card-hi),var(--card) 60%,var(--card-lo));
+  color:var(--card-ink);
+}
+.fan-bolt{
+  position:absolute;bottom:26px;left:50%;width:26px;height:26px;margin-left:-13px;z-index:6;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 32%,var(--steel-hi),var(--steel) 60%,var(--steel-deep));
+  box-shadow:0 3px 8px var(--sh-3);
+}
+.fan-bolt::after{content:"";position:absolute;inset:9px;border-radius:50%;
+  background:var(--steel-core);box-shadow:inset 0 1px 3px var(--sh-3)}
+
+/* ── штампованная пластина цифр ── */
+.plate{margin:56px 0 0;position:relative}
+.plate-in{
+  position:relative;
+  border:1px solid var(--plate-edge);border-radius:6px;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 1px,transparent 1px 4px),
+    linear-gradient(170deg,var(--plate-hi),var(--plate-lo) 70%);
+  box-shadow:0 8px 26px var(--sh-2),inset 0 1px 0 rgba(255,255,255,.06);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  padding:8px 0;
+}
+.plate-cell{padding:26px 20px;text-align:center;position:relative}
+.plate-cell+.plate-cell::before{
+  content:"";position:absolute;left:0;top:22%;bottom:22%;width:1px;
+  background:linear-gradient(180deg,transparent,var(--plate-edge),transparent);
+}
+.plate-cell b{
+  display:block;font-family:var(--disp);font-weight:600;font-size:var(--fs-plate);
+  color:var(--plate-digit);letter-spacing:.03em;
+  text-shadow:0 1px 0 rgba(255,255,255,.09),0 -1px 1px var(--sh-4);
+}
+.plate-cell span{font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);letter-spacing:.05em}
+/* заклёпки по углам пластины */
+.plate-in::before,.plate-in::after{
+  content:"";position:absolute;width:8px;height:8px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--met-hi),var(--steel-deep));
+  box-shadow:0 1px 2px var(--sh-4);
+}
+.plate-in::before{top:10px;left:12px}
+.plate-in::after{top:10px;right:12px}
+
+/* ── вкладка-разделитель секции ── */
+section.cat{padding:96px 0 0}
+.divider{display:flex;align-items:flex-end;gap:0;margin-bottom:34px}
+.div-tab{
+  background:var(--blue-fill);color:var(--white);font-family:var(--mono);font-size:var(--fs-mono);
+  letter-spacing:.06em;padding:9px 16px 8px;border-radius:6px 6px 0 0;
+  box-shadow:0 -4px 14px var(--sh-1);
+}
+.div-line{flex:1;border-bottom:2px solid var(--edge);position:relative}
+.divider h2{
+  font-size:var(--fs-h2);font-weight:500;letter-spacing:.02em;
+  text-transform:uppercase;margin-left:18px;padding-bottom:6px;border-bottom:2px solid var(--edge);
+}
+.sec-note{max-width:68ch;margin-bottom:36px;color:var(--body)}
+
+/* ── направления: оглавление каталога ── */
+.toc{border-top:1px solid var(--edge)}
+.toc-row{
+  display:grid;grid-template-columns:74px minmax(0,.85fr) minmax(0,1.35fr) 218px;
+  gap:20px;align-items:baseline;
+  padding:20px 6px;border-bottom:1px solid var(--edge);
+  transition:background .2s;
+}
+.toc-row:hover{background:var(--raised)}
+.toc-num{font-family:var(--mono);font-size:var(--fs-mono);color:var(--blue-bright)}
+.toc-name{font-family:var(--disp);font-weight:500;font-size:var(--fs-lead);color:var(--ink);letter-spacing:.02em}
+.toc-desc{font-size:var(--fs-small)}
+.toc-mat{font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--tag);white-space:nowrap;letter-spacing:.02em}
+
+/* ── производство ── */
+.prod-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;align-items:start}
+.tech-list{display:flex;flex-direction:column;gap:10px}
+.tech-row{
+  display:grid;grid-template-columns:34px minmax(0,auto) minmax(0,1fr);gap:14px;align-items:baseline;
+  background:var(--raised);border:1px solid var(--edge);border-radius:4px;
+  padding:13px 16px;
+}
+.tech-row i{font-style:normal;font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--blue-bright)}
+.tech-row b{color:var(--ink);font-weight:600;font-size:var(--fs-small)}
+.tech-row span{font-size:var(--fs-note);color:var(--tag)}
+.prod-photo{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 10px 32px var(--sh-2)}
+.prod-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
+.prod-photo figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:40px 18px 14px;
+  background:linear-gradient(transparent,var(--scrim-soft));
+  font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--caption);letter-spacing:.02em;
+}
+.mat-line{margin-top:26px;font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);line-height:2}
+.mat-line b{color:var(--body);font-weight:500}
+
+/* ── работы: каталожные листы ── */
+.sheets{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.sheet{
+  background:var(--sheet);border-radius:6px;overflow:hidden;cursor:zoom-in;
+  border:0;padding:0;text-align:left;font:inherit;
+  box-shadow:0 6px 24px var(--sh-1);
+  transition:transform .25s,box-shadow .25s;
+  display:flex;flex-direction:column;
+}
+.sheet:hover{transform:translateY(-4px);box-shadow:0 14px 36px var(--sh-2)}
+.sheet img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--white)}
+.sheet-cap{padding:14px 16px 15px;display:flex;flex-direction:column;gap:3px}
+.sheet-cap b{color:var(--sheet-ink);font-weight:700;font-size:var(--fs-small);line-height:1.3}
+.sheet-cap .br{color:var(--sheet-ink-2);font-size:var(--fs-note)}
+.sheet-cap .mt{font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--sheet-ink-3);letter-spacing:.02em;margin-top:4px}
+
+/* бренды */
+.brands{margin-top:46px;border:1px solid var(--edge);border-radius:6px;background:var(--raised);padding:22px 26px}
+.brands p:first-child{font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);letter-spacing:.06em;margin-bottom:10px}
+.brands-row{display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--disp);font-weight:500;font-size:var(--fs-body);letter-spacing:.05em;color:var(--ink);text-transform:uppercase}
+.brands-row span{opacity:.85}
+
+/* ── процесс ── */
+.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:0;border:1px solid var(--edge);border-radius:6px;overflow:hidden}
+.step{
+  background:var(--raised);padding:20px 16px 22px;position:relative;
+  border-left:1px solid var(--edge);
+}
+.step:first-child{border-left:0}
+.step i{font-style:normal;font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--blue-bright);display:block;margin-bottom:10px}
+.step b{display:block;color:var(--ink);font-family:var(--disp);font-weight:500;font-size:var(--fs-small);letter-spacing:.03em;margin-bottom:8px;text-transform:uppercase}
+.step span{font-size:var(--fs-note);color:var(--tag);line-height:1.45;display:block}
+.steps-note{margin-top:18px;font-size:var(--fs-small);color:var(--body)}
+.steps-note b{color:var(--ink)}
+
+/* ── старт ── */
+.start-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.start-item{
+  border:1px solid var(--edge);border-radius:6px;background:var(--raised);
+  padding:26px 26px 28px;display:flex;flex-direction:column;gap:10px;
+}
+.start-item i{font-style:normal;font-family:var(--mono);font-size:var(--fs-mono);color:var(--blue-bright)}
+.start-item b{color:var(--ink);font-family:var(--disp);font-weight:500;font-size:var(--fs-lead);letter-spacing:.02em}
+.start-item p{font-size:var(--fs-small);flex:1}
+.start-item a{font-weight:700;font-size:var(--fs-small)}
+
+/* ── контакты ── */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:start}
+.contact-list{display:flex;flex-direction:column;gap:20px;font-size:var(--fs-body)}
+.contact-list .lbl{font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--tag);letter-spacing:.1em;display:block;margin-bottom:4px}
+.contact-list a.big{font-family:var(--mono);font-size:var(--fs-lead);color:var(--ink)}
+.contact-note{border:1px solid var(--edge);border-radius:6px;background:var(--raised);padding:28px}
+.contact-note h3{font-size:var(--fs-h3);font-weight:500;letter-spacing:.02em;margin-bottom:12px;text-transform:uppercase}
+.contact-note p{margin-bottom:22px}
+footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
+.foot-in{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--tag)}
+
+/* ── лайтбокс ── */
+.lb{
+  position:fixed;inset:0;z-index:100;background:var(--scrim);
+  display:none;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:24px;
+}
+.lb.on{display:flex}
+.lb img{max-width:min(1200px,94vw);max-height:78vh;border-radius:6px;box-shadow:0 20px 60px var(--sh-4)}
+.lb-cap{font-family:var(--mono);font-size:var(--fs-mono);color:var(--caption);text-align:center;max-width:80ch}
+.lb button{
+  position:absolute;background:var(--raised);border:1px solid var(--edge);color:var(--ink);
+  width:46px;height:46px;border-radius:50%;font-size:var(--fs-lead);cursor:pointer;
+}
+.lb button:hover{border-color:var(--tag)}
+.lb-x{top:20px;right:20px}
+.lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb-next{right:16px;top:50%;transform:translateY(-50%)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .swatch{transition:none}
+  .sheet{transition:none}
+}
+
+/* ── адаптив ── */
+@media (max-width:980px){
+  .hero-in{grid-template-columns:1fr;gap:40px}
+  .fan{height:340px}
+  .swatch{width:128px;height:200px;margin-left:-64px}
+  .prod-grid{grid-template-columns:1fr}
+  .sheets{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .step:nth-child(5){border-left:0}
+  .step:nth-child(n+5){border-top:1px solid var(--edge)}
+  .contact-grid{grid-template-columns:1fr}
+  nav.menu{display:none}
+}
+@media (max-width:640px){
+  .hero{padding:52px 0 24px}
+  .hero .sub{font-size:var(--fs-body)}
+  section.cat{padding:72px 0 0}
+  .fan{height:300px}
+  .swatch{width:106px;height:172px;margin-left:-53px;padding:12px 10px}
+  .swatch .m-name{font-size:var(--fs-note)}
+  .swatch .m-tech{font-size:var(--fs-mono-sm)}
+  .fan.open .swatch:nth-child(1){transform:rotate(-38deg)}
+  .fan.open .swatch:nth-child(2){transform:rotate(-19deg)}
+  .fan.open .swatch:nth-child(4){transform:rotate(19deg)}
+  .fan.open .swatch:nth-child(5){transform:rotate(38deg)}
+  .plate-in{grid-template-columns:repeat(2,1fr)}
+  .plate-cell:nth-child(3),.plate-cell:nth-child(4){border-top:1px solid var(--plate-edge)}
+  .plate-cell+.plate-cell::before{display:none}
+  .toc-row{grid-template-columns:54px 1fr;gap:6px 14px;padding:16px 4px}
+  .toc-desc{grid-column:2}
+  .toc-mat{grid-column:2;white-space:normal}
+  .sheets{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(3),.step:nth-child(5),.step:nth-child(7){border-left:0}
+  .step:nth-child(n+3){border-top:1px solid var(--edge)}
+  .start-grid{grid-template-columns:1fr}
+  .top-wa{display:none}
+  .top-in{gap:12px;padding:12px 16px}
+  .logo small{display:none}
+  .langs{margin-left:auto}
+  .divider h2{font-size:var(--fs-h3)}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="#" aria-label="S-Advertising Company">
+      <b>S</b>-ADVERTISING<small>COMPANY</small>
+    </a>
+    <nav class="menu" aria-label="Разделы">
+      <a href="#napravleniya" data-i18n="nav.services">Направления</a>
+      <a href="#proizvodstvo" data-i18n="nav.production">Производство</a>
+      <a href="#raboty" data-i18n="nav.works">Работы</a>
+      <a href="#start" data-i18n="nav.start">Как начать</a>
+      <a href="#kontakty" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <div class="langs" role="group" aria-label="Язык сайта">
+      <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+      <button type="button" data-lang="kz" aria-pressed="false">KZ</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="top-wa wa-link" href="https://wa.me/77775774405" data-i18n="nav.wa">WhatsApp</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <h1 data-i18n-html="hero.title">Производство <em>POSM</em> и рекламных конструкций</h1>
+      <p class="sub" data-i18n="hero.sub">Полный цикл под одной крышей: дизайн и 3D-визуализация, конструкторская документация, УФ- и широкоформатная печать, производство, логистика, монтаж и сервис. Собственный цех 1000 м² в Алматы.</p>
+      <div class="cta-row">
+        <a class="btn btn-blue wa-link" href="https://wa.me/77775774405" data-i18n="hero.cta1">Получить расчёт в WhatsApp</a>
+        <a class="btn btn-ghost" href="#raboty" data-i18n="hero.cta2">Смотреть работы</a>
+      </div>
+      <p class="hero-tag" data-i18n="hero.tag">ТОО S-Advertising Company · Алматы · Казахстан и СНГ</p>
+    </div>
+    <div class="fan" id="fan" aria-label="Образцы материалов: акрил, МДФ, металл, ПЭТ, картон">
+      <div class="swatch sw-cardboard">
+        <span class="m-name" data-i18n="mat.cardboard">Картон</span>
+        <span class="m-tech" data-i18n="mat.cardboard.t">УФ-печать</span>
+      </div>
+      <div class="swatch sw-pet">
+        <span class="m-name" data-i18n="mat.pet">ПЭТ</span>
+        <span class="m-tech" data-i18n="mat.pet.t">вакуумная формовка</span>
+      </div>
+      <div class="swatch sw-acrylic">
+        <span class="m-name" data-i18n="mat.acrylic">Акрил</span>
+        <span class="m-tech" data-i18n="mat.acrylic.t">лазерный раскрой</span>
+      </div>
+      <div class="swatch sw-mdf">
+        <span class="m-name" data-i18n="mat.mdf">МДФ</span>
+        <span class="m-tech" data-i18n="mat.mdf.t">фрезеровка</span>
+      </div>
+      <div class="swatch sw-metal">
+        <span class="m-name" data-i18n="mat.metal">Металл</span>
+        <span class="m-tech" data-i18n="mat.metal.t">3D-гибка</span>
+      </div>
+      <div class="fan-bolt" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- пластина цифр -->
+  <div class="wrap plate">
+    <div class="plate-in">
+      <div class="plate-cell"><b>2021</b><span data-i18n="plate.founded">год основания</span></div>
+      <div class="plate-cell"><b>1000 м²</b><span data-i18n="plate.area">площадь производства</span></div>
+      <div class="plate-cell"><b>50</b><span data-i18n="plate.staff">специалистов в штате</span></div>
+      <div class="plate-cell"><b>2000+</b><span data-i18n="plate.projects">реализованных проектов</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- НАПРАВЛЕНИЯ -->
+<section class="cat" id="napravleniya">
+  <div class="wrap">
+    <div class="divider">
+      <span class="div-tab">SA-01</span>
+      <h2 data-i18n="sec.services">Что мы производим</h2>
+      <div class="div-line"></div>
+    </div>
+    <p class="sec-note" data-i18n="sec.services.note">Девять направлений: от паллетной выкладки до комплексного оформления торговой точки. Каждая позиция каталога — под ключ: конструкция, печать, монтаж.</p>
+    <div class="toc">
+      <div class="toc-row">
+        <span class="toc-num">01</span>
+        <span class="toc-name" data-i18n="svc.1">Брендинг торговых точек</span>
+        <span class="toc-desc" data-i18n="svc.1.d">Категорийное оформление: колонны, подсветка полок, брендзоны, shop-in-shop.</span>
+        <span class="toc-mat">ПВХ · акрил · LED</span>
+      </div>
+      <div class="toc-row">
+        <span class="toc-num">02</span>
+        <span class="toc-name" data-i18n="svc.2">POSM и промо-конструкции</span>
+        <span class="toc-desc" data-i18n="svc.2.d">Паллетные выкладки, торцевые конструкции, шипперы, гравити-дисплеи, шелф-органайзеры, брендированные стойки.</span>
+        <span class="toc-mat" data-i18n="svc.2.m">картон · ПЭТ · металл</span>
+      </div>
+      <div class="toc-row">
+        <span class="toc-num">03</span>
+        <span class="toc-name" data-i18n="svc.3">LED-решения</span>
+        <span class="toc-desc" data-i18n="svc.3.d">LED-экраны, световая навигация, подсветка выкладки и торгового оборудования.</span>
+        <span class="toc-mat">LED</span>
+      </div>
+      <div class="toc-row">
+        <span class="toc-num">04</span>
+        <span class="toc-name" data-i18n="svc.4">Лайтбоксы</span>
+        <span class="toc-desc" data-i18n="svc.4.d">Световые короба любой формы: тонкие, двусторонние, нестандартные.</span>
+        <span class="toc-mat" data-i18n="svc.4.m">акрил · металл · LED</span>
+      </div>
+      <div class="toc-row">
+        <span class="toc-num">05</span>
+        <span class="toc-name" data-i18n="svc.5">Объёмные буквы и навигация</span>
+        <span class="toc-desc" data-i18n="svc.5.d">Вывески, объёмные логотипы, внутренняя навигация торговых пространств.</span>
+        <span class="toc-mat" data-i18n="svc.5.m">акрил · ПВХ · LED</span>
+      </div>
+      <div class="toc-row">
+        <span class="toc-num">06</span>
+        <span class="toc-name" data-i18n="svc.6">Брендинг торгового оборудования</span>
+        <span class="toc-desc" data-i18n="svc.6.d">Холодильники, стеллажи, кассовые зоны, торцы: оклейка и объёмные элементы.</span>
+        <span class="toc-mat" data-i18n="svc.6.m">оракал · ПЭТ · магнитная плёнка</span>
+      </div>
+      <div class="toc-row">
+        <span class="toc-num">07</span>
+        <span class="toc-name" data-i18n="svc.7">Широкоформатная и УФ-печать</span>
+        <span class="toc-desc" data-i18n="svc.7.d">Прямая печать на жёстких поверхностях; баннерная ткань, оракал, текстиль, холст, магнитная плёнка.</span>
+        <span class="toc-mat" data-i18n="svc.7.m">жёсткие и рулонные материалы</span>
+      </div>
+      <div class="toc-row">
+        <span class="toc-num">08</span>
+        <span class="toc-name" data-i18n="svc.8">Фотозоны и инсталляции</span>
+        <span class="toc-desc" data-i18n="svc.8.d">МАФ, прессволлы, промо-инсталляции: от чертежа до монтажа.</span>
+        <span class="toc-mat" data-i18n="svc.8.m">МДФ · фанера · металл</span>
+      </div>
+      <div class="toc-row">
+        <span class="toc-num">09</span>
+        <span class="toc-name" data-i18n="svc.9">Индивидуальное производство</span>
+        <span class="toc-desc" data-i18n="svc.9.d">Нестандартные конструкции по вашему ТЗ, или спроектируем с нуля.</span>
+        <span class="toc-mat" data-i18n="svc.9.m">любой материал каталога</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРОИЗВОДСТВО -->
+<section class="cat" id="proizvodstvo">
+  <div class="wrap">
+    <div class="divider">
+      <span class="div-tab">SA-02</span>
+      <h2 data-i18n="sec.prod">Производственная база</h2>
+      <div class="div-line"></div>
+    </div>
+    <p class="sec-note" data-i18n="sec.prod.note">Собственный парк оборудования закрывает все ключевые операции. Сроки и себестоимость не зависят от загрузки внешних площадок.</p>
+    <div class="prod-grid">
+      <div class="tech-list">
+        <div class="tech-row"><i>T-01</i><b data-i18n="tech.1">Планшетная УФ-печать</b><span data-i18n="tech.1.d">прямая печать: ПЭТ, ПВХ, стекло, акрил</span></div>
+        <div class="tech-row"><i>T-02</i><b data-i18n="tech.2">Широкоформатная печать</b><span data-i18n="tech.2.d">баннерная ткань и винил: наружные и интерьерные задачи</span></div>
+        <div class="tech-row"><i>T-03</i><b data-i18n="tech.3">Эко-сольвентная печать</b><span data-i18n="tech.3.d">оракал, текстиль, холст: интерьерная графика</span></div>
+        <div class="tech-row"><i>T-04</i><b data-i18n="tech.4">Контурная резка</b><span data-i18n="tech.4.d">режущий плоттер: аппликации любой формы</span></div>
+        <div class="tech-row"><i>T-05</i><b data-i18n="tech.5">Фрезерная обработка</b><span data-i18n="tech.5.d">раскрой листовых материалов: акрил, МДФ, ЛДСП</span></div>
+        <div class="tech-row"><i>T-06</i><b data-i18n="tech.6">Лазерный раскрой</b><span data-i18n="tech.6.d">точный рез и гравировка</span></div>
+        <div class="tech-row"><i>T-07</i><b data-i18n="tech.7">Вакуумная формовка</b><span data-i18n="tech.7.d">объёмные формы из пластика</span></div>
+        <div class="tech-row"><i>T-08</i><b data-i18n="tech.8">3D-гибка металла</b><span data-i18n="tech.8.d">проволочные конструкции: гравити-стойки, каркасы</span></div>
+      </div>
+      <figure class="prod-photo">
+        <img src="assets/production-always.webp" alt="Тираж паллетных выкладок Always в производственном цехе S-Advertising" loading="lazy" width="1600" height="1600">
+        <figcaption data-i18n="prod.caption">Тираж паллетных выкладок перед отгрузкой — собственный цех, Алматы</figcaption>
+      </figure>
+    </div>
+    <p class="mat-line"><b data-i18n="prod.mats">Материалы в работе:</b> <span data-i18n="prod.mats.list">акрил · ПЭТ · ПВХ · дерево · фанера · ЛДСП · МДФ · металл · картон · оракал · текстиль</span></p>
+  </div>
+</section>
+
+<!-- РАБОТЫ -->
+<section class="cat" id="raboty">
+  <div class="wrap">
+    <div class="divider">
+      <span class="div-tab">SA-03</span>
+      <h2 data-i18n="sec.works">Каталожные листы</h2>
+      <div class="div-line"></div>
+    </div>
+    <p class="sec-note" data-i18n="sec.works.note">Реальные проекты для брендов FMCG и бытовой техники. На каждом листе: изделие, бренды, материалы. Нажмите, чтобы рассмотреть.</p>
+    <div class="sheets" id="sheets">
+      <button class="sheet" type="button">
+        <img src="assets/mars-chocolate-factory.webp" alt="Островная выкладка «Шоколадная фабрика» для брендов Mars" loading="lazy" width="1600" height="893">
+        <span class="sheet-cap">
+          <b data-i18n="w.1">Островная выкладка «Шоколадная фабрика»</b>
+          <span class="br">M&amp;M's · Snickers · Twix · Bounty</span>
+          <span class="mt" data-i18n="w.1.m">ЛДСП · акрил · LED-подсветка</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/pallet-always-fairy-lenor.webp" alt="Паллетные выкладки Always, Fairy и Lenor" loading="lazy" width="1600" height="893">
+        <span class="sheet-cap">
+          <b data-i18n="w.2">Паллетные выкладки</b>
+          <span class="br">Always · Fairy · Lenor</span>
+          <span class="mt" data-i18n="w.2.m">картон · ПВХ · УФ-печать</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/pallet-ariel-tide.webp" alt="Сезонная кампания Ariel и Tide: формованные дисплеи-бутылки и объёмная фигура Pampers" loading="lazy" width="1600" height="893">
+        <span class="sheet-cap">
+          <b data-i18n="w.3">Сезонная кампания: дисплеи-бутылки</b>
+          <span class="br">Ariel · Tide · Pampers</span>
+          <span class="mt" data-i18n="w.3.m">вакуумная формовка · УФ-печать</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/displays-herbal-naturella-oralb.webp" alt="Напольные дисплеи Herbal Essences, Naturella и Oral-B" loading="lazy" width="1600" height="893">
+        <span class="sheet-cap">
+          <b data-i18n="w.4">Напольные дисплеи</b>
+          <span class="br">Herbal Essences · Naturella · Oral-B</span>
+          <span class="mt" data-i18n="w.4.m">дерево · акрил · LED</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/arches-oralb-ariel-gillette.webp" alt="Рекламные арки Oral-B, Ariel и Gillette" loading="lazy" width="1600" height="893">
+        <span class="sheet-cap">
+          <b data-i18n="w.5">Рекламные арки</b>
+          <span class="br">Oral-B · Ariel · Gillette</span>
+          <span class="mt" data-i18n="w.5.m">МДФ · широкоформатная печать</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/stands-braun-tefal.webp" alt="Брендированные стойки Braun и Tefal" loading="lazy" width="1376" height="767">
+        <span class="sheet-cap">
+          <b data-i18n="w.6">Брендированные стойки</b>
+          <span class="br">Braun · Tefal</span>
+          <span class="mt" data-i18n="w.6.m">ЛДСП · акрил</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/metal-racks-mars-lays.webp" alt="Металлические торговые стеллажи Mars и Lay's" loading="lazy" width="1600" height="893">
+        <span class="sheet-cap">
+          <b data-i18n="w.7">Металлические стеллажи</b>
+          <span class="br">Mars · Lay's</span>
+          <span class="mt" data-i18n="w.7.m">металл · 3D-гибка</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/podium-tefal-oralb.webp" alt="Демо-подиум Tefal и прилавочный дисплей Oral-B с подсветкой" loading="lazy" width="1600" height="893">
+        <span class="sheet-cap">
+          <b data-i18n="w.8">Демо-подиумы с подсветкой</b>
+          <span class="br">Tefal · Oral-B</span>
+          <span class="mt" data-i18n="w.8.m">акрил · LED</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/gravity-gillette.webp" alt="Гравити-стойки Gillette из гнутой проволоки" loading="lazy" width="1376" height="768">
+        <span class="sheet-cap">
+          <b data-i18n="w.9">Гравити-стойки</b>
+          <span class="br">Gillette</span>
+          <span class="mt" data-i18n="w.9.m">металл · проволочная гибка</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/shelf-lenor.webp" alt="Шелф-дисплеи и полочные конструкции, включая Lenor" loading="lazy" width="1600" height="893">
+        <span class="sheet-cap">
+          <b data-i18n="w.10">Шелф-дисплеи</b>
+          <span class="br">Lenor</span>
+          <span class="mt" data-i18n="w.10.m">ПЭТ · картон</span>
+        </span>
+      </button>
+      <button class="sheet" type="button">
+        <img src="assets/counter-gillette-oldspice.webp" alt="Прилавочные дисплеи Gillette и Old Spice, эко-дисплей из фанеры" loading="lazy" width="1600" height="893">
+        <span class="sheet-cap">
+          <b data-i18n="w.11">Прилавочные дисплеи</b>
+          <span class="br">Gillette · Old Spice</span>
+          <span class="mt" data-i18n="w.11.m">акрил · картон · фанера</span>
+        </span>
+      </button>
+    </div>
+    <div class="brands">
+      <p data-i18n="brands.lbl">БРЕНДЫ В НАШИХ ПРОЕКТАХ</p>
+      <div class="brands-row">
+        <span>M&amp;M's</span><span>Snickers</span><span>Twix</span><span>Bounty</span>
+        <span>Ariel</span><span>Tide</span><span>Fairy</span><span>Lenor</span>
+        <span>Always</span><span>Naturella</span><span>Oral-B</span><span>Gillette</span>
+        <span>Old Spice</span><span>Herbal Essences</span><span>Pampers</span>
+        <span>Braun</span><span>Tefal</span><span>Lay's</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРОЦЕСС -->
+<section class="cat" id="process">
+  <div class="wrap">
+    <div class="divider">
+      <span class="div-tab">SA-04</span>
+      <h2 data-i18n="sec.process">Полный цикл</h2>
+      <div class="div-line"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><i>01</i><b data-i18n="st.1">Дизайн и 3D</b><span data-i18n="st.1.d">макет сразу проектируется под технологию и материалы</span></div>
+      <div class="step"><i>02</i><b data-i18n="st.2">Конструкторская документация</b><span data-i18n="st.2.d">чертежи и файлы для станков</span></div>
+      <div class="step"><i>03</i><b data-i18n="st.3">Образец и цветопроба</b><span data-i18n="st.3.d">согласование до запуска тиража</span></div>
+      <div class="step"><i>04</i><b data-i18n="st.4">Производство</b><span data-i18n="st.4.d">печать, раскрой, формовка, сборка в собственном цехе</span></div>
+      <div class="step"><i>05</i><b data-i18n="st.5">Логистика</b><span data-i18n="st.5.d">доставка по Алматы, регионам РК и СНГ</span></div>
+      <div class="step"><i>06</i><b data-i18n="st.6">Монтаж</b><span data-i18n="st.6.d">по графику, с фотоотчётом по каждой торговой точке</span></div>
+      <div class="step"><i>07</i><b data-i18n="st.7">Сервис</b><span data-i18n="st.7.d">обслуживание конструкций после сдачи</span></div>
+    </div>
+    <p class="steps-note" data-i18n-html="process.note">На каждом проекте — <b>единый ответственный менеджер</b>: один договор, одна точка ответственности от эскиза до сервиса.</p>
+  </div>
+</section>
+
+<!-- СТАРТ -->
+<section class="cat" id="start">
+  <div class="wrap">
+    <div class="divider">
+      <span class="div-tab">SA-05</span>
+      <h2 data-i18n="sec.start">С чего начать</h2>
+      <div class="div-line"></div>
+    </div>
+    <p class="sec-note" data-i18n="sec.start.note">Для знакомства не нужен крупный контракт. Выберите удобный первый шаг.</p>
+    <div class="start-grid">
+      <div class="start-item">
+        <i>S-01</i><b data-i18n="go.1">Расчёт по вашему ТЗ</b>
+        <p data-i18n="go.1.d">Пришлите техническое задание или макет — вернём конструкцию, материалы, сроки и стоимость.</p>
+        <a class="wa-link" href="https://wa.me/77775774405" data-i18n="go.1.a">Отправить ТЗ в WhatsApp →</a>
+      </div>
+      <div class="start-item">
+        <i>S-02</i><b data-i18n="go.2">Контрольный образец</b>
+        <p data-i18n="go.2.d">Оцените качество производства до каких-либо обязательств: изготовим образец по вашему проекту.</p>
+        <a class="wa-link" href="https://wa.me/77775774405" data-i18n="go.2.a">Запросить образец →</a>
+      </div>
+      <div class="start-item">
+        <i>S-03</i><b data-i18n="go.3">Визит на производство</b>
+        <p data-i18n="go.3.d">Покажем станочный парк и текущие проекты в цехе в Алматы.</p>
+        <a class="wa-link" href="https://wa.me/77775774405" data-i18n="go.3.a">Договориться о визите →</a>
+      </div>
+      <div class="start-item">
+        <i>S-04</i><b data-i18n="go.4">Аккредитация поставщика</b>
+        <p data-i18n="go.4.d">Работаете через квалификацию поставщиков? Пришлите порядок: оперативно предоставим документы.</p>
+        <a href="mailto:zhumabekyessim@gmail.com" data-i18n="go.4.a">Написать на почту →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<section class="cat" id="kontakty">
+  <div class="wrap">
+    <div class="divider">
+      <span class="div-tab">SA-06</span>
+      <h2 data-i18n="sec.contacts">Контакты</h2>
+      <div class="div-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-list">
+        <div>
+          <span class="lbl" data-i18n="c.phones">ТЕЛЕФОНЫ</span>
+          <a class="big" href="tel:+77775774405">+7 777 577 44 05</a><br>
+          <a class="big" href="tel:+77071622905">+7 707 162 29 05</a>
+        </div>
+        <div>
+          <span class="lbl">E-MAIL</span>
+          <a class="big" href="mailto:zhumabekyessim@gmail.com">zhumabekyessim@gmail.com</a>
+        </div>
+        <div>
+          <span class="lbl" data-i18n="c.addr">АДРЕС</span>
+          <span data-i18n="c.addr.v">г. Алматы, Алатауский район, мкр. Алгабас, ул. 7, уч. 142/88</span>
+        </div>
+        <div>
+          <span class="lbl" data-i18n="c.langs">РАБОЧИЕ ЯЗЫКИ</span>
+          <span data-i18n="c.langs.v">русский · казахский · английский</span>
+        </div>
+      </div>
+      <div class="contact-note">
+        <h3 data-i18n="c.cta.t">Обсудим ваш проект</h3>
+        <p data-i18n="c.cta.d">Пришлите макет, ТЗ или референс — вернём инженерную оценку: конструкция, материалы, сроки, стоимость.</p>
+        <a class="btn btn-blue wa-link" href="https://wa.me/77775774405" data-i18n="c.cta.b">Написать в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span data-i18n="foot.c">ТОО S-Advertising Company · БИН 210940039754</span>
+    <span data-i18n="foot.g">Алматы · Казахстан и СНГ</span>
+  </div>
+</footer>
+
+<!-- лайтбокс -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр фотографии проекта">
+  <button class="lb-x" type="button" aria-label="Закрыть">✕</button>
+  <button class="lb-prev" type="button" aria-label="Предыдущее фото">‹</button>
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+  <p class="lb-cap"></p>
+  <button class="lb-next" type="button" aria-label="Следующее фото">›</button>
+</div>
+
+<script>
+/* ── словари KZ/EN; RU снимается с разметки при загрузке ── */
+const I18N = {
+kz: {
+  "nav.services":"Бағыттар","nav.production":"Өндіріс","nav.works":"Жұмыстар","nav.start":"Қалай бастау","nav.contacts":"Байланыс","nav.wa":"WhatsApp",
+  "hero.title":"<em>POSM</em> және жарнамалық құрылымдар өндірісі",
+  "hero.sub":"Толық цикл бір шаңырақ астында: дизайн және 3D-визуализация, конструкторлық құжаттама, УФ және кең форматты басып шығару, өндіріс, логистика, монтаж және сервис. Алматыдағы меншікті цех — 1000 м².",
+  "hero.cta1":"WhatsApp арқылы есеп алу","hero.cta2":"Жұмыстарды көру",
+  "hero.tag":"S-Advertising Company ЖШС · Алматы · Қазақстан және ТМД",
+  "mat.cardboard":"Картон","mat.cardboard.t":"УФ басып шығару",
+  "mat.pet":"ПЭТ","mat.pet.t":"вакуумдық қалыптау",
+  "mat.acrylic":"Акрил","mat.acrylic.t":"лазерлік кесу",
+  "mat.mdf":"МДФ","mat.mdf.t":"фрезерлеу",
+  "mat.metal":"Металл","mat.metal.t":"3D-ию",
+  "plate.founded":"құрылған жылы","plate.area":"өндіріс алаңы","plate.staff":"штаттағы маман","plate.projects":"жүзеге асқан жоба",
+  "sec.services":"Біз не өндіреміз",
+  "sec.services.note":"Тоғыз бағыт: паллеттік қойылымнан сауда нүктесін кешенді безендіруге дейін. Каталогтың әр позициясы — «кілт тапсыру»: құрылым, басып шығару, монтаж.",
+  "svc.1":"Сауда нүктелерін брендтеу","svc.1.d":"Категориялық безендіру: бағандар, сөре жарығы, бренд-аймақтар, shop-in-shop.",
+  "svc.2":"POSM және промо-құрылымдар","svc.2.d":"Паллеттік қойылымдар, торцтық құрылымдар, шипперлер, гравити-дисплейлер, сөре органайзерлері, брендтелген тұғырлар.","svc.2.m":"картон · ПЭТ · металл",
+  "svc.3":"LED-шешімдер","svc.3.d":"LED-экрандар, жарық навигациясы, қойылым мен сауда жабдығының жарығы.",
+  "svc.4":"Лайтбокстар","svc.4.d":"Кез келген пішіндегі жарық қораптар: жұқа, екі жақты, стандартты емес.","svc.4.m":"акрил · металл · LED",
+  "svc.5":"Көлемді әріптер мен навигация","svc.5.d":"Маңдайшалар, көлемді логотиптер, сауда кеңістігінің ішкі навигациясы.","svc.5.m":"акрил · ПВХ · LED",
+  "svc.6":"Сауда жабдығын брендтеу","svc.6.d":"Тоңазытқыштар, сөрелер, касса аймақтары, торцтар: жапсыру және көлемді элементтер.","svc.6.m":"оракал · ПЭТ · магниттік үлдір",
+  "svc.7":"Кең форматты және УФ басып шығару","svc.7.d":"Қатты беттерге тікелей басып шығару; баннер матасы, оракал, текстиль, кенеп, магниттік үлдір.","svc.7.m":"қатты және орамды материалдар",
+  "svc.8":"Фотоаймақтар мен инсталляциялар","svc.8.d":"Шағын сәулет нысандары, прессволдар, промо-инсталляциялар: сызбадан монтажға дейін.","svc.8.m":"МДФ · фанера · металл",
+  "svc.9":"Жеке тапсырыспен өндіру","svc.9.d":"Сіздің ТЗ бойынша стандартты емес құрылымдар, немесе нөлден жобалаймыз.","svc.9.m":"каталогтың кез келген материалы",
+  "sec.prod":"Өндірістік база",
+  "sec.prod.note":"Меншікті жабдық паркі барлық негізгі операцияларды жабады. Мерзім мен өзіндік құн сыртқы алаңдарға тәуелді емес.",
+  "tech.1":"Планшеттік УФ басып шығару","tech.1.d":"тікелей басып шығару: ПЭТ, ПВХ, шыны, акрил",
+  "tech.2":"Кең форматты басып шығару","tech.2.d":"баннер матасы мен винил: сыртқы және интерьерлік міндеттер",
+  "tech.3":"Эко-сольвенттік басып шығару","tech.3.d":"оракал, текстиль, кенеп: интерьерлік графика",
+  "tech.4":"Контурлық кесу","tech.4.d":"кескіш плоттер: кез келген пішіндегі аппликациялар",
+  "tech.5":"Фрезерлік өңдеу","tech.5.d":"парақ материалдарын кесу: акрил, МДФ, ЛДСП",
+  "tech.6":"Лазерлік кесу","tech.6.d":"дәл кесу және гравировка",
+  "tech.7":"Вакуумдық қалыптау","tech.7.d":"пластиктен көлемді пішіндер",
+  "tech.8":"Металды 3D-ию","tech.8.d":"сым құрылымдары: гравити-тұғырлар, қаңқалар",
+  "prod.caption":"Жөнелту алдындағы паллеттік қойылымдар тиражы — меншікті цех, Алматы",
+  "prod.mats":"Жұмыстағы материалдар:","prod.mats.list":"акрил · ПЭТ · ПВХ · ағаш · фанера · ЛДСП · МДФ · металл · картон · оракал · текстиль",
+  "sec.works":"Каталог парақтары",
+  "sec.works.note":"FMCG және тұрмыстық техника брендтеріне арналған нақты жобалар. Әр парақта: бұйым, брендтер, материалдар. Үлкейту үшін басыңыз.",
+  "w.1":"«Шоколад фабрикасы» аралдық қойылымы","w.1.m":"ЛДСП · акрил · LED-жарық",
+  "w.2":"Паллеттік қойылымдар","w.2.m":"картон · ПВХ · УФ басып шығару",
+  "w.3":"Маусымдық науқан: бөтелке-дисплейлер","w.3.m":"вакуумдық қалыптау · УФ басып шығару",
+  "w.4":"Едендік дисплейлер","w.4.m":"ағаш · акрил · LED",
+  "w.5":"Жарнамалық аркалар","w.5.m":"МДФ · кең форматты басып шығару",
+  "w.6":"Брендтелген тұғырлар","w.6.m":"ЛДСП · акрил",
+  "w.7":"Металл сөрелер","w.7.m":"металл · 3D-ию",
+  "w.8":"Жарығы бар демо-подиумдар","w.8.m":"акрил · LED",
+  "w.9":"Гравити-тұғырлар","w.9.m":"металл · сым ию",
+  "w.10":"Сөре дисплейлері","w.10.m":"ПЭТ · картон",
+  "w.11":"Үстел дисплейлері","w.11.m":"акрил · картон · фанера",
+  "brands.lbl":"ЖОБАЛАРЫМЫЗДАҒЫ БРЕНДТЕР",
+  "sec.process":"Толық цикл",
+  "st.1":"Дизайн және 3D","st.1.d":"макет бірден технология мен материалға сай жобаланады",
+  "st.2":"Конструкторлық құжаттама","st.2.d":"сызбалар мен станок файлдары",
+  "st.3":"Үлгі және түс сынамасы","st.3.d":"тиражды бастамас бұрын келісу",
+  "st.4":"Өндіріс","st.4.d":"басып шығару, кесу, қалыптау, құрастыру: меншікті цехте",
+  "st.5":"Логистика","st.5.d":"Алматы, ҚР өңірлері және ТМД бойынша жеткізу",
+  "st.6":"Монтаж","st.6.d":"кесте бойынша, әр сауда нүктесінен фотоесеппен",
+  "st.7":"Сервис","st.7.d":"тапсырғаннан кейін құрылымдарға қызмет көрсету",
+  "process.note":"Әр жобада — <b>бір жауапты менеджер</b>: бір келісімшарт, эскизден сервиске дейін бір жауапкершілік нүктесі.",
+  "sec.start":"Неден бастау керек",
+  "sec.start.note":"Танысу үшін ірі келісімшарт қажет емес. Ыңғайлы алғашқы қадамды таңдаңыз.",
+  "go.1":"Сіздің ТЗ бойынша есеп","go.1.d":"Техникалық тапсырма немесе макет жіберіңіз — құрылымды, материалдарды, мерзімі мен құнын қайтарамыз.","go.1.a":"ТЗ-ны WhatsApp-қа жіберу →",
+  "go.2":"Бақылау үлгісі","go.2.d":"Ешқандай міндеттемесіз өндіріс сапасын бағалаңыз: жобаңыз бойынша үлгі жасаймыз.","go.2.a":"Үлгі сұрату →",
+  "go.3":"Өндіріске бару","go.3.d":"Алматыдағы цехта станок паркі мен ағымдағы жобаларды көрсетеміз.","go.3.a":"Сапар туралы келісу →",
+  "go.4":"Жеткізушіні аккредиттеу","go.4.d":"Жеткізушілерді біліктілеу арқылы жұмыс істейсіз бе? Тәртібін жіберіңіз: құжаттарды жедел ұсынамыз.","go.4.a":"Поштаға жазу →",
+  "sec.contacts":"Байланыс",
+  "c.phones":"ТЕЛЕФОНДАР","c.addr":"МЕКЕНЖАЙ",
+  "c.addr.v":"Алматы қ., Алатау ауданы, Алғабас ықшамауданы, 7-көше, 142/88 учаске",
+  "c.langs":"ЖҰМЫС ТІЛДЕРІ","c.langs.v":"қазақша · орысша · ағылшынша",
+  "c.cta.t":"Жобаңызды талқылайық",
+  "c.cta.d":"Макет, ТЗ немесе референс жіберіңіз — инженерлік бағалау қайтарамыз: құрылым, материалдар, мерзім, құн.",
+  "c.cta.b":"WhatsApp-қа жазу",
+  "foot.c":"S-Advertising Company ЖШС · БСН 210940039754","foot.g":"Алматы · Қазақстан және ТМД"
+},
+en: {
+  "nav.services":"Services","nav.production":"Facility","nav.works":"Portfolio","nav.start":"Getting started","nav.contacts":"Contacts","nav.wa":"WhatsApp",
+  "hero.title":"<em>POSM</em> &amp; retail display manufacturing",
+  "hero.sub":"Full cycle under one roof: design and 3D visualization, engineering drawings, UV and large-format printing, production, logistics, installation and after-sales service. Our own 1,000 m² facility in Almaty.",
+  "hero.cta1":"Get a quote on WhatsApp","hero.cta2":"See our work",
+  "hero.tag":"S-Advertising Company LLP · Almaty · Kazakhstan & CIS",
+  "mat.cardboard":"Cardboard","mat.cardboard.t":"UV printing",
+  "mat.pet":"PET","mat.pet.t":"vacuum forming",
+  "mat.acrylic":"Acrylic","mat.acrylic.t":"laser cutting",
+  "mat.mdf":"MDF","mat.mdf.t":"CNC routing",
+  "mat.metal":"Metal","mat.metal.t":"3D wire bending",
+  "plate.founded":"founded","plate.area":"production floor","plate.staff":"in-house specialists","plate.projects":"completed projects",
+  "sec.services":"What we produce",
+  "sec.services.note":"Nine product lines: from pallet displays to complete store branding. Every catalog item is turnkey: structure, printing, installation.",
+  "svc.1":"In-store branding","svc.1.d":"Category zones: columns, shelf lighting, brand zones, shop-in-shop.",
+  "svc.2":"POSM & promo displays","svc.2.d":"Pallet displays, end-caps, shippers, gravity dispensers, shelf organizers, branded stands.","svc.2.m":"cardboard · PET · metal",
+  "svc.3":"LED solutions","svc.3.d":"LED screens, illuminated navigation, display and equipment lighting.",
+  "svc.4":"Lightboxes","svc.4.d":"Illuminated boxes of any shape: slim, double-sided, custom.","svc.4.m":"acrylic · metal · LED",
+  "svc.5":"Channel letters & wayfinding","svc.5.d":"Signage, dimensional logos, in-store navigation.","svc.5.m":"acrylic · PVC · LED",
+  "svc.6":"Retail equipment branding","svc.6.d":"Coolers, racks, checkout zones, end-caps: wraps and dimensional elements.","svc.6.m":"vinyl · PET · magnetic film",
+  "svc.7":"Large-format & UV printing","svc.7.d":"Direct printing on rigid surfaces; banner fabric, vinyl, textile, canvas, magnetic film.","svc.7.m":"rigid & roll materials",
+  "svc.8":"Photo zones & installations","svc.8.d":"Street furniture, press walls, promo installations: from drawing to installation.","svc.8.m":"MDF · plywood · metal",
+  "svc.9":"Custom manufacturing","svc.9.d":"Non-standard structures to your spec, or engineered from scratch.","svc.9.m":"any catalog material",
+  "sec.prod":"Production facility",
+  "sec.prod.note":"Our own equipment fleet covers every key operation. Lead times and costs don't depend on external contractors.",
+  "tech.1":"Flatbed UV printing","tech.1.d":"direct printing: PET, PVC, glass, acrylic",
+  "tech.2":"Large-format printing","tech.2.d":"banner fabric and vinyl: outdoor and indoor",
+  "tech.3":"Eco-solvent printing","tech.3.d":"vinyl, textile, canvas: interior graphics",
+  "tech.4":"Contour cutting","tech.4.d":"cutting plotter: die-cuts of any shape",
+  "tech.5":"CNC routing","tech.5.d":"sheet materials: acrylic, MDF, chipboard",
+  "tech.6":"Laser cutting","tech.6.d":"precision cutting and engraving",
+  "tech.7":"Vacuum forming","tech.7.d":"dimensional plastic shapes",
+  "tech.8":"3D wire bending","tech.8.d":"wire structures: gravity dispensers, frames",
+  "prod.caption":"A pallet display production run before shipment — our own facility, Almaty",
+  "prod.mats":"Materials we work with:","prod.mats.list":"acrylic · PET · PVC · wood · plywood · chipboard · MDF · metal · cardboard · vinyl · textile",
+  "sec.works":"Catalog sheets",
+  "sec.works.note":"Real projects for FMCG and home-appliance brands. On every sheet: the piece, the brands, the materials. Click to zoom.",
+  "w.1":"“Chocolate Factory” island display","w.1.m":"chipboard · acrylic · LED lighting",
+  "w.2":"Pallet displays","w.2.m":"cardboard · PVC · UV printing",
+  "w.3":"Seasonal campaign: bottle displays","w.3.m":"vacuum forming · UV printing",
+  "w.4":"Floor displays","w.4.m":"wood · acrylic · LED",
+  "w.5":"Promo arches","w.5.m":"MDF · large-format printing",
+  "w.6":"Branded stands","w.6.m":"chipboard · acrylic",
+  "w.7":"Metal retail racks","w.7.m":"metal · 3D bending",
+  "w.8":"Illuminated demo podiums","w.8.m":"acrylic · LED",
+  "w.9":"Gravity dispensers","w.9.m":"metal · wire bending",
+  "w.10":"Shelf displays","w.10.m":"PET · cardboard",
+  "w.11":"Counter displays","w.11.m":"acrylic · cardboard · plywood",
+  "brands.lbl":"BRANDS IN OUR PROJECTS",
+  "sec.process":"Full cycle",
+  "st.1":"Design & 3D","st.1.d":"designed for the production technology and materials from day one",
+  "st.2":"Engineering drawings","st.2.d":"drawings and CNC-ready files",
+  "st.3":"Sample & color proof","st.3.d":"approved before the production run",
+  "st.4":"Production","st.4.d":"printing, cutting, forming, assembly: in-house",
+  "st.5":"Logistics","st.5.d":"delivery across Almaty, Kazakhstan and the CIS",
+  "st.6":"Installation","st.6.d":"on schedule, with a photo report for every store",
+  "st.7":"Service","st.7.d":"we maintain our structures after handover",
+  "process.note":"Every project has <b>one dedicated manager</b>: one contract, one point of responsibility from sketch to service.",
+  "sec.start":"Getting started",
+  "sec.start.note":"No big contract needed to get acquainted. Pick a comfortable first step.",
+  "go.1":"Quote from your spec","go.1.d":"Send a spec or artwork — we'll return the structure, materials, lead time and price.","go.1.a":"Send a spec on WhatsApp →",
+  "go.2":"Control sample","go.2.d":"Judge our production quality before any commitment: we'll produce a sample from your project.","go.2.a":"Request a sample →",
+  "go.3":"Facility visit","go.3.d":"See the machine fleet and current projects at our Almaty facility.","go.3.a":"Arrange a visit →",
+  "go.4":"Supplier accreditation","go.4.d":"Working through supplier qualification? Send us your procedure: we'll provide the documents promptly.","go.4.a":"Email us →",
+  "sec.contacts":"Contacts",
+  "c.phones":"PHONES","c.addr":"ADDRESS",
+  "c.addr.v":"142/88, 7th street, Algabas, Alatau district, Almaty, Kazakhstan",
+  "c.langs":"WORKING LANGUAGES","c.langs.v":"Russian · Kazakh · English",
+  "c.cta.t":"Let's discuss your project",
+  "c.cta.d":"Send artwork, a spec or a reference — we'll return an engineering assessment: structure, materials, lead time, price.",
+  "c.cta.b":"Message us on WhatsApp",
+  "foot.c":"S-Advertising Company LLP · BIN 210940039754","foot.g":"Almaty · Kazakhstan & CIS"
+}
+};
+
+const WA = {
+  ru:"https://wa.me/77775774405?text="+encodeURIComponent("Здравствуйте! Интересует расчёт POSM по нашему ТЗ."),
+  kz:"https://wa.me/77775774405?text="+encodeURIComponent("Сәлеметсіз бе! POSM бойынша есеп алғым келеді."),
+  en:"https://wa.me/77775774405?text="+encodeURIComponent("Hello! I'd like a quote for POSM production.")
+};
+
+/* RU-словарь снимается с разметки, переключение симметрично */
+I18N.ru = {};
+document.querySelectorAll("[data-i18n]").forEach(el=>{ I18N.ru[el.dataset.i18n] = el.textContent; });
+document.querySelectorAll("[data-i18n-html]").forEach(el=>{ I18N.ru[el.dataset.i18nHtml] = el.innerHTML; });
+
+function setLang(lang){
+  const dict = I18N[lang]; if(!dict) return;
+  document.documentElement.lang = lang==="kz" ? "kk" : lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.dataset.i18n;
+    if(k in dict) el.textContent = dict[k];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const k = el.dataset.i18nHtml;
+    if(k in dict) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll(".wa-link").forEach(a=>{ a.href = WA[lang]; });
+  document.querySelectorAll(".langs button").forEach(b=>{
+    b.setAttribute("aria-pressed", String(b.dataset.lang===lang));
+  });
+  try{ localStorage.setItem("sa-lang", lang); }catch(e){}
+}
+document.querySelectorAll(".langs button").forEach(b=>{
+  b.addEventListener("click", ()=> setLang(b.dataset.lang));
+});
+try{
+  const saved = localStorage.getItem("sa-lang");
+  if(saved && saved!=="ru") setLang(saved);
+}catch(e){}
+
+/* веер раскрывается после загрузки */
+window.addEventListener("load", ()=>{
+  requestAnimationFrame(()=> document.getElementById("fan").classList.add("open"));
+});
+
+/* лайтбокс */
+const lb = document.getElementById("lb");
+const lbImg = lb.querySelector("img");
+const lbCap = lb.querySelector(".lb-cap");
+const cards = Array.from(document.querySelectorAll("#sheets .sheet"));
+let idx = 0, lastFocus = null;
+function showLb(i){
+  idx = (i + cards.length) % cards.length;
+  const img = cards[idx].querySelector("img");
+  const cap = cards[idx].querySelector(".sheet-cap");
+  lbImg.src = img.src; lbImg.alt = img.alt;
+  lbCap.textContent = cap.innerText.replace(/\n+/g," · ");
+  lb.classList.add("on");
+  document.body.style.overflow = "hidden";
+  lb.querySelector(".lb-x").focus();
+}
+function hideLb(){
+  lb.classList.remove("on");
+  document.body.style.overflow = "";
+  if(lastFocus) lastFocus.focus();
+}
+cards.forEach((c,i)=> c.addEventListener("click", ()=>{ lastFocus = c; showLb(i); }));
+lb.querySelector(".lb-x").addEventListener("click", hideLb);
+lb.querySelector(".lb-prev").addEventListener("click", ()=> showLb(idx-1));
+lb.querySelector(".lb-next").addEventListener("click", ()=> showLb(idx+1));
+lb.addEventListener("click", e=>{ if(e.target===lb) hideLb(); });
+document.addEventListener("keydown", e=>{
+  if(!lb.classList.contains("on")) return;
+  if(e.key==="Escape") hideLb();
+  if(e.key==="ArrowLeft") showLb(idx-1);
+  if(e.key==="ArrowRight") showLb(idx+1);
+  if(e.key==="Tab"){
+    const f = lb.querySelectorAll("button");
+    const first = f[0], last = f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  }
+});
+</script>
+</body>
+</html>

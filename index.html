@@ -401,6 +401,7 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
     </a>
     <nav class="menu" aria-label="Разделы">
       <a href="#katalog" data-i18n="nav.catalog">Каталог</a>
+      <a href="#raboty" data-i18n="nav.works">Работы</a>
       <a href="#proizvodstvo" data-i18n="nav.production">Производство</a>
       <a href="#process" data-i18n="nav.cycle">Полный цикл</a>
       <a href="#start" data-i18n="nav.start">Как начать</a>
@@ -485,10 +486,24 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
         <span>M&amp;M's</span><span>Snickers</span><span>Twix</span><span>Bounty</span>
         <span>Ariel</span><span>Tide</span><span>Fairy</span><span>Lenor</span>
         <span>Always</span><span>Naturella</span><span>Oral-B</span><span>Gillette</span>
-        <span>Old Spice</span><span>Herbal Essences</span><span>Pampers</span>
+        <span>Old Spice</span><span>Herbal Essences</span><span>Head &amp; Shoulders</span><span>Pampers</span>
+        <span>Coca-Cola</span><span>Fanta</span><span>Carlsberg</span><span>Пиала</span>
         <span>Braun</span><span>Tefal</span><span>Lay's</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- РАБОТЫ -->
+<section class="cat" id="raboty">
+  <div class="wrap">
+    <div class="divider">
+      <span class="div-tab">SA-02</span>
+      <h2 data-i18n="sec.works">Работы</h2>
+      <div class="div-line"></div>
+    </div>
+    <p class="sec-note" data-i18n="sec.works.note">Избранные проекты для FMCG и бытовой техники. Нажмите, чтобы рассмотреть; больше фото — внутри категорий каталога.</p>
+    <div class="sheets" id="workGrid"></div>
   </div>
 </section>
 
@@ -496,7 +511,7 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="cat" id="proizvodstvo">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-02</span>
+      <span class="div-tab">SA-03</span>
       <h2 data-i18n="sec.prod">Производственная база</h2>
       <div class="div-line"></div>
     </div>
@@ -549,7 +564,7 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="cat" id="process">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-03</span>
+      <span class="div-tab">SA-04</span>
       <h2 data-i18n="sec.process">Полный цикл</h2>
       <div class="div-line"></div>
     </div>
@@ -570,7 +585,7 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="cat" id="start">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-04</span>
+      <span class="div-tab">SA-05</span>
       <h2 data-i18n="sec.start">С чего начать</h2>
       <div class="div-line"></div>
     </div>
@@ -604,7 +619,7 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="cat" id="kontakty">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-05</span>
+      <span class="div-tab">SA-06</span>
       <h2 data-i18n="sec.contacts">Контакты</h2>
       <div class="div-line"></div>
     </div>
@@ -681,7 +696,9 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 /* ── словари KZ/EN; RU снимается с разметки при загрузке ── */
 const I18N = {
 kz: {
-  "nav.catalog":"Каталог","nav.production":"Өндіріс","nav.cycle":"Толық цикл","nav.start":"Қалай бастау","nav.contacts":"Байланыс","nav.wa":"WhatsApp",
+  "nav.catalog":"Каталог","nav.works":"Жұмыстар","nav.production":"Өндіріс","nav.cycle":"Толық цикл","nav.start":"Қалай бастау","nav.contacts":"Байланыс","nav.wa":"WhatsApp",
+  "sec.works":"Жұмыстар",
+  "sec.works.note":"FMCG және тұрмыстық техникаға арналған таңдаулы жобалар. Үлкейту үшін басыңыз; көбірек фото — каталог санаттарының ішінде.",
   "hero.title":"<em>POSM</em> және жарнамалық құрылымдар өндірісі",
   "hero.sub":"Толық цикл бір шаңырақ астында: дизайн мен сызбадан басып шығару, монтаж және сервиске дейін. Алматыдағы меншікті цех — 1000 м².",
   "hero.cta1":"WhatsApp арқылы есеп алу","hero.cta2":"Каталогты ашу",
@@ -732,7 +749,9 @@ kz: {
   "foot.c":"S-Advertising Company ЖШС · БСН 210940039754","foot.g":"Алматы · монтаж және сервис бүкіл Қазақстан бойынша"
 },
 en: {
-  "nav.catalog":"Catalog","nav.production":"Facility","nav.cycle":"Full cycle","nav.start":"Getting started","nav.contacts":"Contacts","nav.wa":"WhatsApp",
+  "nav.catalog":"Catalog","nav.works":"Our work","nav.production":"Facility","nav.cycle":"Full cycle","nav.start":"Getting started","nav.contacts":"Contacts","nav.wa":"WhatsApp",
+  "sec.works":"Our work",
+  "sec.works.note":"Selected projects for FMCG and home appliances. Click to zoom; more photos inside catalog categories.",
   "hero.title":"<em>POSM</em> &amp; retail display manufacturing",
   "hero.sub":"Full cycle under one roof: from design and drawings to printing, installation and service. Our own 1,000 m² facility in Almaty.",
   "hero.cta1":"Get a quote on WhatsApp","hero.cta2":"Open the catalog",
@@ -811,7 +830,7 @@ const CATS = [
  {slug:"racks", name:{ru:"Металлические стеллажи",kz:"Металл сөрелер",en:"Metal racks"},
   desc:{ru:"Торговые стеллажи из металла: гибка, сборка, брендинг.",kz:"Металдан жасалған сауда сөрелері: ию, құрастыру, брендтеу.",en:"Retail metal racks: bending, assembly, branding."},
   mat:{ru:"металл · 3D-гибка",kz:"металл · 3D-ию",en:"metal · 3D bending"},
-  photos:[{src:"metal-racks-mars-lays",cap:"Mars · Lay's"}]},
+  photos:[{src:"metal-racks-mars-lays",cap:"Mars · Lay's"},{src:"racks-coke-piala-snickers",cap:"Coca-Cola · Пиала · Snickers"}]},
  {slug:"podiums", name:{ru:"Демо-подиумы с подсветкой",kz:"Жарығы бар демо-подиумдар",en:"Illuminated demo podiums"},
   desc:{ru:"Подиумы для демонстрации техники с LED-подсветкой.",kz:"LED-жарығы бар техника көрсету подиумдары.",en:"Demo podiums with LED lighting."},
   mat:{ru:"акрил · LED",kz:"акрил · LED",en:"acrylic · LED"},
@@ -823,14 +842,15 @@ const CATS = [
  {slug:"shelf", name:{ru:"Шелф-дисплеи",kz:"Сөре дисплейлері",en:"Shelf displays"},
   desc:{ru:"Шелф-органайзеры и полочные дисплеи.",kz:"Сөре органайзерлері мен сөре дисплейлері.",en:"Shelf organizers and on-shelf displays."},
   mat:{ru:"ПЭТ · картон",kz:"ПЭТ · картон",en:"PET · cardboard"},
-  photos:[{src:"shelf-lenor",cap:"Lenor"}]},
+  photos:[{src:"shelf-lenor",cap:"Lenor"},{src:"shelf-talkers",cap:"Old Spice · Head & Shoulders"}]},
  {slug:"counter", name:{ru:"Прилавочные дисплеи",kz:"Үстел дисплейлері",en:"Counter displays"},
   desc:{ru:"Настольные и прилавочные дисплеи из акрила, картона и фанеры.",kz:"Акрил, картон және фанерадан жасалған үстел дисплейлері.",en:"Counter displays in acrylic, cardboard and plywood."},
   mat:{ru:"акрил · картон · фанера",kz:"акрил · картон · фанера",en:"acrylic · cardboard · plywood"},
-  photos:[{src:"counter-gillette-oldspice",cap:"Gillette · Old Spice"}]},
+  photos:[{src:"counter-gillette-oldspice",cap:"Gillette · Old Spice"},{src:"counter-coke-fanta",cap:"Coca-Cola · Fanta"}]},
  {slug:"light", name:{ru:"Лайтбоксы и объёмные буквы",kz:"Лайтбокстар мен көлемді әріптер",en:"Lightboxes & channel letters"},
   desc:{ru:"Световые короба, вывески, объёмные логотипы и навигация.",kz:"Жарық қораптар, маңдайшалар, көлемді логотиптер мен навигация.",en:"Lightboxes, signage, dimensional logos and wayfinding."},
-  mat:{ru:"акрил · металл · LED",kz:"акрил · металл · LED",en:"acrylic · metal · LED"}, photos:[]},
+  mat:{ru:"акрил · металл · LED",kz:"акрил · металл · LED",en:"acrylic · metal · LED"},
+  photos:[{src:"lightbox-carlsberg-bounty",cap:"Kronenbourg 1664 · Carlsberg · Bounty"}]},
  {slug:"led", name:{ru:"LED-решения",kz:"LED-шешімдер",en:"LED solutions"},
   desc:{ru:"LED-экраны, световая навигация, подсветка выкладки и оборудования.",kz:"LED-экрандар, жарық навигациясы, қойылым мен жабдық жарығы.",en:"LED screens, illuminated navigation, display lighting."},
   mat:{ru:"LED",kz:"LED",en:"LED"}, photos:[]},
@@ -889,6 +909,7 @@ function setLang(lang){
     b.setAttribute("aria-pressed", String(b.dataset.lang===lang));
   });
   renderCatalog();
+  renderGallery();
   const open = currentSlug();
   if(open) renderCatPage(open);
   try{ localStorage.setItem("sa-lang", lang); }catch(e){}
@@ -915,6 +936,47 @@ function renderCatalog(){
       + count
       + '<span class="toc-arrow" aria-hidden="true">→</span>';
     catList.appendChild(a);
+  });
+}
+
+/* ── работы на главной: подборка из uploads/Главная страница ── */
+const GALLERY = [
+  {src:"mars-chocolate-factory", slug:"island", cap:"M&M's · Snickers · Twix · Bounty"},
+  {src:"pallet-always-fairy-lenor", slug:"pallet", cap:"Always · Fairy · Lenor"},
+  {src:"pallet-ariel-tide", slug:"pallet", cap:"Ariel · Tide · Pampers"},
+  {src:"counter-coke-fanta", slug:"counter", cap:"Coca-Cola · Fanta"},
+  {src:"lightbox-carlsberg-bounty", slug:"light", cap:"Kronenbourg 1664 · Carlsberg · Bounty"},
+  {src:"racks-coke-piala-snickers", slug:"racks", cap:"Coca-Cola · Пиала · Snickers"},
+  {src:"arches-oralb-ariel-gillette", slug:"arches", cap:"Oral-B · Ariel · Gillette"},
+  {src:"displays-herbal-naturella-oralb", slug:"floor", cap:"Herbal Essences · Naturella · Oral-B"},
+  {src:"podium-tefal-oralb", slug:"podiums", cap:"Tefal · Oral-B"},
+  {src:"stands-braun-tefal", slug:"stands", cap:"Braun · Tefal"},
+  {src:"metal-racks-mars-lays", slug:"racks", cap:"Mars · Lay's"},
+  {src:"gravity-gillette", slug:"gravity", cap:"Gillette"},
+  {src:"shelf-lenor", slug:"shelf", cap:"Lenor"},
+  {src:"shelf-talkers", slug:"shelf", cap:"Old Spice · Head & Shoulders"},
+  {src:"counter-gillette-oldspice", slug:"counter", cap:"Gillette · Old Spice"}
+];
+const workGrid = document.getElementById("workGrid");
+function galleryCat(){
+  return {
+    name:{ru:"",kz:"",en:""},
+    photos: GALLERY.map(g=>{
+      const c = CATS.find(x=>x.slug===g.slug);
+      return {src:g.src, cap:(c ? c.name[LANG]+" · " : "")+g.cap};
+    })
+  };
+}
+function renderGallery(){
+  workGrid.innerHTML = "";
+  GALLERY.forEach((g,i)=>{
+    const c = CATS.find(x=>x.slug===g.slug);
+    const b = document.createElement("button");
+    b.className = "sheet"; b.type = "button";
+    b.innerHTML = '<img src="assets/'+g.src+'.webp" srcset="assets/'+g.src+'-800.webp 800w, assets/'+g.src+'.webp 1600w" sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 370px" alt="'+(c?c.name[LANG]:"")+' — '+g.cap+'" loading="lazy">'
+      + '<span class="sheet-cap"><b>'+(c?c.name[LANG]:"")+'</b> · '+g.cap+"</span>";
+    b.addEventListener("click", ()=> openLb(galleryCat(), i, b));
+    workGrid.appendChild(b);
   });
 }
 
@@ -1028,9 +1090,10 @@ function showLb(i){
   const n = lbCat.photos.length;
   lbIdx = (i + n) % n;
   const p = lbCat.photos[lbIdx];
+  const pre = lbCat.name[LANG] ? lbCat.name[LANG]+" · " : "";
   lbImg.src = "assets/"+p.src+".webp";
-  lbImg.alt = lbCat.name[LANG]+" — "+p.cap;
-  lbCap.textContent = lbCat.name[LANG]+" · "+p.cap;
+  lbImg.alt = pre + p.cap;
+  lbCap.textContent = pre + p.cap;
 }
 function hideLb(){
   lb.classList.remove("on");
@@ -1055,6 +1118,7 @@ document.addEventListener("keydown", e=>{
 
 /* ── старт ── */
 renderCatalog();
+renderGallery();
 try{
   const saved = localStorage.getItem("sa-lang");
   if(saved && saved!=="ru") setLang(saved);

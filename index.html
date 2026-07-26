@@ -58,7 +58,6 @@ FORM: белый зал — выбран владельцем 26.07.2026 (вар
   --r-sm:4px;
   /* — свет: тень только под предметом — */
   --sh-obj:0 26px 22px rgba(20,22,26,.13);
-  --sh-obj-sm:0 14px 14px rgba(20,22,26,.10);
   --w:1220px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -129,22 +128,12 @@ nav.menu a:hover{color:var(--ink)}
 .sl-track{display:flex;transition:transform .62s cubic-bezier(.16,1,.3,1)}
 .sl-slide{flex:0 0 100%}
 .sl-slide img{
-  width:100%;height:auto;aspect-ratio:16/11;object-fit:contain;
-  padding:24px 26px 20px;filter:drop-shadow(var(--sh-obj-sm));
+  width:100%;height:auto;
 }
 .sl-slide figcaption{
   padding:15px 26px 19px;font-size:var(--fs-note);color:var(--ink-2);
   border-top:1px solid var(--line);
 }
-.sl-btn{
-  position:absolute;top:40%;width:42px;height:42px;border-radius:50%;
-  background:rgba(255,255,255,.94);border:1px solid var(--line);color:var(--ink);
-  font-size:var(--fs-lead);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-}
-.sl-btn:hover{border-color:var(--line-2)}
-.sl-prev{left:-14px}
-.sl-next{right:-14px}
 .sl-dots{display:flex;gap:8px;justify-content:center;margin-top:20px}
 .sl-dots button{
   width:7px;height:7px;padding:0;border:0;border-radius:50%;
@@ -198,15 +187,15 @@ section.cat:last-of-type{padding-bottom:20px}
 .brands-row span{opacity:.7}
 
 /* ── экспонаты: изделие в витрине, музейная подпись под ней ── */
-.sheets{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 40px}
+.sheets{column-count:3;column-gap:40px}
 .sheet{
   background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;
-  cursor:zoom-in;display:flex;flex-direction:column;
+  cursor:zoom-in;display:block;width:100%;
+  margin:0 0 46px;break-inside:avoid;-webkit-column-break-inside:avoid;
 }
 .sheet img{
-  width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;
+  width:100%;height:auto;
   background:var(--white);border:1px solid var(--line);
-  padding:20px 22px 18px;filter:drop-shadow(var(--sh-obj-sm));
   transition:border-color .22s;
 }
 .sheet:hover img{border-color:var(--line-2)}
@@ -340,7 +329,7 @@ footer{margin-top:112px;border-top:1px solid var(--line);padding:30px 0 40px}
 @media (max-width:1080px){
   .steps{grid-template-columns:repeat(4,1fr)}
   .step:nth-child(4n+1){border-left:1px solid var(--line)}
-  .sheets{grid-template-columns:repeat(2,1fr);gap:48px 34px}
+  .sheets{column-count:2;column-gap:34px}
   nav.menu{display:none}
   .langs{margin-left:auto}
 }
@@ -350,8 +339,6 @@ footer{margin-top:112px;border-top:1px solid var(--line);padding:30px 0 40px}
   .hero{padding:64px 0 0}
   .hero-in{grid-template-columns:1fr;gap:48px}
   .hero h1{max-width:19ch}
-  .sl-prev{left:10px}
-  .sl-next{right:10px}
   .prod-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
   .toc{grid-template-columns:1fr;gap:0}
 }
@@ -367,7 +354,7 @@ footer{margin-top:112px;border-top:1px solid var(--line);padding:30px 0 40px}
   .plate{margin:56px 0 0}
   .plate-in{gap:24px 38px}
   .plate-cell{min-width:38%}
-  .sheets{grid-template-columns:1fr;gap:44px}
+  .sheets{column-count:1}
   .steps{grid-template-columns:repeat(2,1fr)}
   .step:nth-child(2n+1){border-left:1px solid var(--line)}
   .start-grid{grid-template-columns:1fr}
@@ -442,8 +429,6 @@ footer{margin-top:112px;border-top:1px solid var(--line);padding:30px 0 40px}
         </figure>
       </div>
       </div>
-      <button class="sl-btn sl-prev" type="button" aria-label="Предыдущий слайд">‹</button>
-      <button class="sl-btn sl-next" type="button" aria-label="Следующий слайд">›</button>
       <div class="sl-dots" id="slDots"></div>
     </div>
   </div>
@@ -956,6 +941,8 @@ const GALLERY = [
   {src:"sign-europharma-facade", slug:"light", cap:"Europharma"},
   {src:"island-factory", slug:"island", cap:"M&M's · Snickers · Twix"}
 ];
+const DIMS = {"arch-lenor":[1536,2752],"arches-oralb-ariel-gillette":[1600,893],"branding-kitchen":[1280,720],"branding-store-1":[1600,900],"branding-tefal-chef":[1200,1600],"branding-tefal-zone":[1600,1200],"counter-ariel":[1200,1600],"counter-coke-fanta":[1376,768],"counter-eco-wood":[1376,768],"counter-gillette-oldspice":[1600,893],"counter-mms":[1600,1201],"counter-oralb":[1600,1200],"custom-box-herbal":[1600,1003],"custom-boxes-2023":[1600,1200],"custom-gift-set":[1600,1200],"displays-herbal-naturella-oralb":[1600,893],"floor-ariel-cold":[768,1376],"floor-ariel-tree":[768,1376],"floor-aussie":[768,1376],"floor-fairy-arc":[768,1376],"floor-fairy-green":[1536,2752],"floor-fairy-teremok":[768,1376],"floor-gillette-gift":[768,1376],"floor-herbal-wood":[768,1376],"floor-naturella-wood":[1536,2752],"floor-oldspice-column":[768,1376],"floor-oldspice-horse":[768,1376],"floor-pantene-biology":[768,1376],"floor-pantene-hs":[768,1376],"floor-pg-promo":[768,1376],"floor-safeguard":[768,1376],"floor-tide":[768,1376],"gravity-gillette":[1376,768],"island-factory":[1200,1600],"island-mms":[1200,1600],"island-snickers-1":[1280,958],"island-snickers-2":[1280,960],"led-lit-column":[1200,1600],"led-nutella":[1200,1600],"led-oralb-cabinet":[1200,1600],"lightbox-carlsberg-bounty":[1376,768],"mars-chocolate-factory":[1600,893],"metal-racks-mars-lays":[1600,893],"pallet-always-fairy-lenor":[1600,893],"pallet-ariel-tide":[1600,893],"photozone-casino":[1600,1067],"photozone-green-1":[1600,1200],"photozone-green-2":[1600,1200],"photozone-green-3":[1600,1501],"photozone-oralb-1":[1600,1200],"photozone-oralb-2":[1600,1200],"podium-tefal-oralb":[1600,893],"print-gillette-mach3":[1223,1599],"print-rollup-pampers":[1200,1600],"print-rollup-pantene":[1200,1600],"print-stopper-oldspice":[1376,768],"print-stopper-oralb":[1376,768],"production-always":[1600,1600],"rack-ariel-tide":[768,1376],"rack-gillette-oralb":[768,1376],"rack-herbal":[768,1376],"rack-lenor-spiral":[768,1376],"rack-oldspice":[768,1376],"rack-oralb-led":[1536,2752],"rack-pantene-hs":[768,1376],"rack-pepsi":[768,1376],"racks-coke-piala-snickers":[1600,893],"shelf-lenor":[1600,893],"shelf-talkers":[1600,893],"sign-deburger":[1600,1200],"sign-degirmen-neon":[1200,1600],"sign-europharma-bereke":[1280,960],"sign-europharma-corner":[1280,960],"sign-europharma-dark":[1280,960],"sign-europharma-facade":[1280,960],"stands-braun-tefal":[1376,767],"talker-ariel":[1376,768],"talker-oldspice":[1376,768],"talker-pepsi":[1599,899],"talker-tide":[1599,1200]};
+function dimAttr(src){const d=DIMS[src];return d?' width="'+d[0]+'" height="'+d[1]+'"':"";}
 const workGrid = document.getElementById("workGrid");
 function galleryCat(){
   return {
@@ -972,7 +959,7 @@ function renderGallery(){
     const c = CATS.find(x=>x.slug===g.slug);
     const b = document.createElement("button");
     b.className = "sheet"; b.type = "button";
-    b.innerHTML = '<img src="assets/'+g.src+'.webp" srcset="assets/'+g.src+'-800.webp 800w, assets/'+g.src+'.webp 1600w" sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 370px" alt="'+(c?c.name[LANG]:"")+' — '+g.cap+'" loading="lazy">'
+    b.innerHTML = '<img'+dimAttr(g.src)+' src="assets/'+g.src+'.webp" srcset="assets/'+g.src+'-800.webp 800w, assets/'+g.src+'.webp 1600w" sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 370px" alt="'+(c?c.name[LANG]:"")+' — '+g.cap+'" loading="lazy">'
       + '<span class="sheet-cap"><b>'+(c?c.name[LANG]:"")+'</b><span class="br">'+g.cap+"</span></span>";
     b.addEventListener("click", ()=> openLb(galleryCat(), i, b));
     workGrid.appendChild(b);
@@ -1001,7 +988,7 @@ function renderCatPage(slug){
     c.photos.forEach((p,pi)=>{
       const b = document.createElement("button");
       b.className = "sheet"; b.type = "button";
-      b.innerHTML = '<img src="assets/'+p.src+'.webp" srcset="assets/'+p.src+'-800.webp 800w, assets/'+p.src+'.webp 1600w" sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 370px" alt="'+c.name[LANG]+' — '+p.cap+'" loading="lazy">'
+      b.innerHTML = '<img'+dimAttr(p.src)+' src="assets/'+p.src+'.webp" srcset="assets/'+p.src+'-800.webp 800w, assets/'+p.src+'.webp 1600w" sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 370px" alt="'+c.name[LANG]+' — '+p.cap+'" loading="lazy">'
         + '<span class="sheet-cap"><b>'+p.cap+"</b></span>";
       b.addEventListener("click", ()=> openLb(c, pi, b));
       grid.appendChild(b);
@@ -1056,8 +1043,6 @@ function restartAuto(){
   if(slTimer) clearInterval(slTimer);
   if(!reduceMotion) slTimer = setInterval(()=> goSlide(slIdx+1), 5000);
 }
-document.querySelector(".sl-prev").addEventListener("click", ()=>{ goSlide(slIdx-1); restartAuto(); });
-document.querySelector(".sl-next").addEventListener("click", ()=>{ goSlide(slIdx+1); restartAuto(); });
 const slider = document.getElementById("slider");
 slider.addEventListener("pointerenter", ()=>{ if(slTimer) clearInterval(slTimer); });
 slider.addEventListener("pointerleave", restartAuto);

@@ -267,7 +267,8 @@ section.cat{padding:96px 0 0}
   display:flex;flex-direction:column;
 }
 .sheet:hover{transform:translateY(-4px);box-shadow:0 14px 36px var(--sh-3)}
-.sheet img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--white)}
+/* изделие показываем целиком: вертикальные стойки не режем кадрированием */
+.sheet img{width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;background:var(--white)}
 .sheet-cap{padding:12px 16px 13px;font-size:var(--fs-note);color:var(--sheet-ink-2)}
 
 /* ── производство ── */
@@ -487,8 +488,9 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
         <span>Ariel</span><span>Tide</span><span>Fairy</span><span>Lenor</span>
         <span>Always</span><span>Naturella</span><span>Oral-B</span><span>Gillette</span>
         <span>Old Spice</span><span>Herbal Essences</span><span>Head &amp; Shoulders</span><span>Pampers</span>
-        <span>Coca-Cola</span><span>Fanta</span><span>Carlsberg</span><span>Пиала</span>
-        <span>Braun</span><span>Tefal</span><span>Lay's</span>
+        <span>Pantene</span><span>Venus</span><span>Aussie</span><span>Safeguard</span><span>Mr. Proper</span>
+        <span>Coca-Cola</span><span>Fanta</span><span>Pepsi</span><span>Carlsberg</span><span>Пиала</span>
+        <span>Braun</span><span>Tefal</span><span>Lay's</span><span>Europharma</span>
       </div>
     </div>
   </div>
@@ -814,15 +816,15 @@ const CATS = [
  {slug:"island", name:{ru:"Островные выкладки",kz:"Аралдық қойылымдар",en:"Island displays"},
   desc:{ru:"Островные конструкции и брендзоны вплоть до формата shop-in-shop.",kz:"Аралдық құрылымдар мен бренд-аймақтар, shop-in-shop форматына дейін.",en:"Island units and brand zones, up to shop-in-shop format."},
   mat:{ru:"ЛДСП · акрил · LED",kz:"ЛДСП · акрил · LED",en:"chipboard · acrylic · LED"},
-  photos:[{src:"mars-chocolate-factory",cap:"M&M's · Snickers · Twix · Bounty"}]},
+  photos:[{src:"mars-chocolate-factory",cap:"M&M's · Snickers · Twix · Bounty"},{src:"island-factory",cap:"M&M's · Snickers · Twix"},{src:"island-snickers-1",cap:"Snickers · Mars"},{src:"island-snickers-2",cap:"Snickers · Mars"},{src:"island-mms",cap:"M&M's · Mars"}]},
  {slug:"floor", name:{ru:"Напольные дисплеи",kz:"Едендік дисплейлер",en:"Floor displays"},
   desc:{ru:"Напольные дисплеи из дерева, акрила и пластика — с подсветкой и без.",kz:"Ағаш, акрил және пластиктен жасалған едендік дисплейлер — жарығымен және жарықсыз.",en:"Floor displays in wood, acrylic and plastic, with or without lighting."},
   mat:{ru:"дерево · акрил · LED",kz:"ағаш · акрил · LED",en:"wood · acrylic · LED"},
-  photos:[{src:"displays-herbal-naturella-oralb",cap:"Herbal Essences · Naturella · Oral-B"}]},
+  photos:[{src:"displays-herbal-naturella-oralb",cap:"Herbal Essences · Naturella · Oral-B"},{src:"floor-aussie",cap:"Aussie"},{src:"floor-tide",cap:"Tide"},{src:"floor-fairy-arc",cap:"Fairy"},{src:"floor-pantene-hs",cap:"Pantene · Head & Shoulders"},{src:"floor-oldspice-horse",cap:"Old Spice"},{src:"floor-safeguard",cap:"Safeguard"},{src:"floor-pg-promo",cap:"Gillette · Pantene · Venus"},{src:"floor-herbal-wood",cap:"Herbal Essences"},{src:"floor-pantene-biology",cap:"Pantene"},{src:"floor-ariel-cold",cap:"Ariel"},{src:"floor-oldspice-column",cap:"Old Spice"},{src:"floor-fairy-teremok",cap:"Fairy · Mr. Proper"},{src:"floor-ariel-tree",cap:"Ariel"},{src:"floor-naturella-wood",cap:"Naturella"},{src:"floor-fairy-green",cap:"Fairy"},{src:"floor-gillette-gift",cap:"Gillette"}]},
  {slug:"arches", name:{ru:"Рекламные арки",kz:"Жарнамалық аркалар",en:"Promo arches"},
   desc:{ru:"Проходные арки для промо-кампаний в торговых залах.",kz:"Сауда залдарындағы промо-науқандарға арналған өтпелі аркалар.",en:"Walk-through arches for in-store promo campaigns."},
   mat:{ru:"МДФ · широкоформатная печать",kz:"МДФ · кең форматты басып шығару",en:"MDF · large-format printing"},
-  photos:[{src:"arches-oralb-ariel-gillette",cap:"Oral-B · Ariel · Gillette"}]},
+  photos:[{src:"arches-oralb-ariel-gillette",cap:"Oral-B · Ariel · Gillette"},{src:"arch-lenor",cap:"Lenor"}]},
  {slug:"stands", name:{ru:"Брендированные стойки",kz:"Брендтелген тұғырлар",en:"Branded stands"},
   desc:{ru:"Стойки под выкладку и демонстрацию товаров и техники.",kz:"Тауарлар мен техниканы қою және көрсетуге арналған тұғырлар.",en:"Stands for product display and demonstration."},
   mat:{ru:"ЛДСП · акрил",kz:"ЛДСП · акрил",en:"chipboard · acrylic"},
@@ -830,7 +832,7 @@ const CATS = [
  {slug:"racks", name:{ru:"Металлические стеллажи",kz:"Металл сөрелер",en:"Metal racks"},
   desc:{ru:"Торговые стеллажи из металла: гибка, сборка, брендинг.",kz:"Металдан жасалған сауда сөрелері: ию, құрастыру, брендтеу.",en:"Retail metal racks: bending, assembly, branding."},
   mat:{ru:"металл · 3D-гибка",kz:"металл · 3D-ию",en:"metal · 3D bending"},
-  photos:[{src:"metal-racks-mars-lays",cap:"Mars · Lay's"},{src:"racks-coke-piala-snickers",cap:"Coca-Cola · Пиала · Snickers"}]},
+  photos:[{src:"metal-racks-mars-lays",cap:"Mars · Lay's"},{src:"racks-coke-piala-snickers",cap:"Coca-Cola · Пиала · Snickers"},{src:"rack-pepsi",cap:"Pepsi"},{src:"rack-lenor-spiral",cap:"Lenor"},{src:"rack-gillette-oralb",cap:"Gillette · Oral-B"},{src:"rack-pantene-hs",cap:"Pantene · Head & Shoulders"},{src:"rack-oldspice",cap:"Old Spice"},{src:"rack-herbal",cap:"Herbal Essences"},{src:"rack-ariel-tide",cap:"Ariel · Tide"},{src:"rack-oralb-led",cap:"Oral-B"}]},
  {slug:"podiums", name:{ru:"Демо-подиумы с подсветкой",kz:"Жарығы бар демо-подиумдар",en:"Illuminated demo podiums"},
   desc:{ru:"Подиумы для демонстрации техники с LED-подсветкой.",kz:"LED-жарығы бар техника көрсету подиумдары.",en:"Demo podiums with LED lighting."},
   mat:{ru:"акрил · LED",kz:"акрил · LED",en:"acrylic · LED"},
@@ -842,30 +844,35 @@ const CATS = [
  {slug:"shelf", name:{ru:"Шелф-дисплеи",kz:"Сөре дисплейлері",en:"Shelf displays"},
   desc:{ru:"Шелф-органайзеры и полочные дисплеи.",kz:"Сөре органайзерлері мен сөре дисплейлері.",en:"Shelf organizers and on-shelf displays."},
   mat:{ru:"ПЭТ · картон",kz:"ПЭТ · картон",en:"PET · cardboard"},
-  photos:[{src:"shelf-lenor",cap:"Lenor"},{src:"shelf-talkers",cap:"Old Spice · Head & Shoulders"}]},
+  photos:[{src:"shelf-lenor",cap:"Lenor"},{src:"shelf-talkers",cap:"Old Spice · Head & Shoulders"},{src:"talker-oldspice",cap:"Old Spice"},{src:"talker-ariel",cap:"Ariel"},{src:"talker-pepsi",cap:"Pepsi"},{src:"talker-tide",cap:"Tide"}]},
  {slug:"counter", name:{ru:"Прилавочные дисплеи",kz:"Үстел дисплейлері",en:"Counter displays"},
   desc:{ru:"Настольные и прилавочные дисплеи из акрила, картона и фанеры.",kz:"Акрил, картон және фанерадан жасалған үстел дисплейлері.",en:"Counter displays in acrylic, cardboard and plywood."},
   mat:{ru:"акрил · картон · фанера",kz:"акрил · картон · фанера",en:"acrylic · cardboard · plywood"},
-  photos:[{src:"counter-gillette-oldspice",cap:"Gillette · Old Spice"},{src:"counter-coke-fanta",cap:"Coca-Cola · Fanta"}]},
+  photos:[{src:"counter-gillette-oldspice",cap:"Gillette · Old Spice"},{src:"counter-coke-fanta",cap:"Coca-Cola · Fanta"},{src:"counter-mms",cap:"M&M's"},{src:"counter-oralb",cap:"Oral-B"},{src:"counter-ariel",cap:"Ariel"},{src:"counter-eco-wood",cap:"Эко-дисплей из фанеры"}]},
  {slug:"light", name:{ru:"Лайтбоксы и объёмные буквы",kz:"Лайтбокстар мен көлемді әріптер",en:"Lightboxes & channel letters"},
   desc:{ru:"Световые короба, вывески, объёмные логотипы и навигация.",kz:"Жарық қораптар, маңдайшалар, көлемді логотиптер мен навигация.",en:"Lightboxes, signage, dimensional logos and wayfinding."},
   mat:{ru:"акрил · металл · LED",kz:"акрил · металл · LED",en:"acrylic · metal · LED"},
-  photos:[{src:"lightbox-carlsberg-bounty",cap:"Kronenbourg 1664 · Carlsberg · Bounty"}]},
+  photos:[{src:"lightbox-carlsberg-bounty",cap:"Kronenbourg 1664 · Carlsberg · Bounty"},{src:"sign-europharma-facade",cap:"Europharma"},{src:"sign-europharma-corner",cap:"Europharma"},{src:"sign-europharma-dark",cap:"Europharma"},{src:"sign-europharma-bereke",cap:"Europharma · Береке"},{src:"sign-degirmen-neon",cap:"Degirmen"},{src:"sign-deburger",cap:"DeBurger"}]},
  {slug:"led", name:{ru:"LED-решения",kz:"LED-шешімдер",en:"LED solutions"},
   desc:{ru:"LED-экраны, световая навигация, подсветка выкладки и оборудования.",kz:"LED-экрандар, жарық навигациясы, қойылым мен жабдық жарығы.",en:"LED screens, illuminated navigation, display lighting."},
-  mat:{ru:"LED",kz:"LED",en:"LED"}, photos:[]},
+  mat:{ru:"LED",kz:"LED",en:"LED"},
+  photos:[{src:"led-oralb-cabinet",cap:"Oral-B · Gillette"},{src:"led-lit-column",cap:"Световая колонна"},{src:"led-nutella",cap:"Nutella"}]},
  {slug:"branding", name:{ru:"Брендинг торговых точек и оборудования",kz:"Сауда нүктелері мен жабдығын брендтеу",en:"Store & equipment branding"},
   desc:{ru:"Колонны, брендзоны, холодильники, кассовые зоны, торцы.",kz:"Бағандар, бренд-аймақтар, тоңазытқыштар, касса аймақтары, торцтар.",en:"Columns, brand zones, coolers, checkout zones, end-caps."},
-  mat:{ru:"ПВХ · оракал · магнитная плёнка",kz:"ПВХ · оракал · магниттік үлдір",en:"PVC · vinyl · magnetic film"}, photos:[]},
+  mat:{ru:"ПВХ · оракал · магнитная плёнка",kz:"ПВХ · оракал · магниттік үлдір",en:"PVC · vinyl · magnetic film"},
+  photos:[{src:"branding-tefal-zone",cap:"Tefal"},{src:"branding-tefal-chef",cap:"Tefal"},{src:"branding-store-1",cap:"Оснащение торгового зала"},{src:"branding-kitchen",cap:"Кухонная зона"}]},
  {slug:"print", name:{ru:"Широкоформатная и УФ-печать",kz:"Кең форматты және УФ басып шығару",en:"Large-format & UV printing"},
   desc:{ru:"Прямая печать на жёстких поверхностях; баннер, оракал, текстиль, холст.",kz:"Қатты беттерге тікелей басып шығару; баннер, оракал, текстиль, кенеп.",en:"Direct printing on rigid surfaces; banner, vinyl, textile, canvas."},
-  mat:{ru:"жёсткие и рулонные материалы",kz:"қатты және орамды материалдар",en:"rigid & roll materials"}, photos:[]},
+  mat:{ru:"жёсткие и рулонные материалы",kz:"қатты және орамды материалдар",en:"rigid & roll materials"},
+  photos:[{src:"print-rollup-pampers",cap:"Pampers"},{src:"print-rollup-pantene",cap:"Pantene · Old Spice"},{src:"print-stopper-oldspice",cap:"Old Spice"},{src:"print-stopper-oralb",cap:"Oral-B"},{src:"print-gillette-mach3",cap:"Gillette Mach3"}]},
  {slug:"photozones", name:{ru:"Фотозоны и инсталляции",kz:"Фотоаймақтар мен инсталляциялар",en:"Photo zones & installations"},
   desc:{ru:"МАФ, прессволлы, промо-инсталляции: от чертежа до монтажа.",kz:"Шағын сәулет нысандары, прессволдар, промо-инсталляциялар: сызбадан монтажға дейін.",en:"Press walls and promo installations: from drawing to installation."},
-  mat:{ru:"МДФ · фанера · металл",kz:"МДФ · фанера · металл",en:"MDF · plywood · metal"}, photos:[]},
+  mat:{ru:"МДФ · фанера · металл",kz:"МДФ · фанера · металл",en:"MDF · plywood · metal"},
+  photos:[{src:"photozone-green-1",cap:"Herbal Essences"},{src:"photozone-green-2",cap:"Herbal Essences"},{src:"photozone-green-3",cap:"Фитостена"},{src:"photozone-oralb-1",cap:"Oral-B"},{src:"photozone-oralb-2",cap:"Oral-B"},{src:"photozone-casino",cap:"Casino Night"}]},
  {slug:"custom", name:{ru:"Индивидуальное производство",kz:"Жеке тапсырыспен өндіру",en:"Custom manufacturing"},
   desc:{ru:"Нестандартные конструкции по вашему ТЗ, или спроектируем с нуля.",kz:"Сіздің ТЗ бойынша стандартты емес құрылымдар, немесе нөлден жобалаймыз.",en:"Non-standard structures to your spec, or engineered from scratch."},
-  mat:{ru:"любой материал каталога",kz:"каталогтың кез келген материалы",en:"any catalog material"}, photos:[]}
+  mat:{ru:"любой материал каталога",kz:"каталогтың кез келген материалы",en:"any catalog material"},
+  photos:[{src:"custom-boxes-2023",cap:"Новогодние боксы"},{src:"custom-gift-set",cap:"Подарочный набор"},{src:"custom-box-herbal",cap:"Herbal Essences"}]}
 ];
 
 const WA_NUM = "77775774405";
@@ -955,7 +962,16 @@ const GALLERY = [
   {src:"gravity-gillette", slug:"gravity", cap:"Gillette"},
   {src:"shelf-lenor", slug:"shelf", cap:"Lenor"},
   {src:"shelf-talkers", slug:"shelf", cap:"Old Spice · Head & Shoulders"},
-  {src:"counter-gillette-oldspice", slug:"counter", cap:"Gillette · Old Spice"}
+  {src:"counter-gillette-oldspice", slug:"counter", cap:"Gillette · Old Spice"},
+  {src:"rack-lenor-spiral", slug:"racks", cap:"Lenor"},
+  {src:"floor-oldspice-column", slug:"floor", cap:"Old Spice"},
+  {src:"floor-fairy-teremok", slug:"floor", cap:"Fairy · Mr. Proper"},
+  {src:"floor-aussie", slug:"floor", cap:"Aussie"},
+  {src:"rack-pepsi", slug:"racks", cap:"Pepsi"},
+  {src:"floor-ariel-tree", slug:"floor", cap:"Ariel"},
+  {src:"photozone-green-1", slug:"photozones", cap:"Herbal Essences"},
+  {src:"sign-europharma-facade", slug:"light", cap:"Europharma"},
+  {src:"island-factory", slug:"island", cap:"M&M's · Snickers · Twix"}
 ];
 const workGrid = document.getElementById("workGrid");
 function galleryCat(){

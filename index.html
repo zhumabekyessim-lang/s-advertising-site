@@ -222,23 +222,6 @@ section.cat{padding:96px 0 0}
 .toc-arrow{color:var(--tag);font-family:var(--mono)}
 .toc-row:hover .toc-arrow{color:var(--ink)}
 
-/* ── фотоотчёты с монтажа: документальная плитка, не каталожный лист ── */
-.field-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.field{
-  background:var(--raised);border:1px solid var(--edge);border-radius:6px;
-  overflow:hidden;cursor:zoom-in;padding:0;text-align:left;font:inherit;
-  display:flex;flex-direction:column;
-  transition:border-color .2s,transform .2s;
-}
-.field:hover{border-color:var(--tag);transform:translateY(-2px)}
-.field img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--desk)}
-.field span{
-  padding:9px 12px 10px;font-family:var(--mono);font-size:var(--fs-mono-sm);
-  color:var(--tag);letter-spacing:.02em;line-height:1.4;
-}
-@media (max-width:980px){.field-grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:640px){.field-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
-
 /* бренды */
 .brands{margin-top:46px;border:1px solid var(--edge);border-radius:6px;background:var(--raised);padding:22px 26px}
 .brands p:first-child{font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);letter-spacing:.06em;margin-bottom:10px}
@@ -420,7 +403,6 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
     <nav class="menu" aria-label="Разделы">
       <a href="#katalog" data-i18n="nav.catalog">Каталог</a>
       <a href="#raboty" data-i18n="nav.works">Работы</a>
-      <a href="#montazh" data-i18n="nav.field">В точках</a>
       <a href="#proizvodstvo" data-i18n="nav.production">Производство</a>
       <a href="#process" data-i18n="nav.cycle">Полный цикл</a>
       <a href="#start" data-i18n="nav.start">Как начать</a>
@@ -493,7 +475,6 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="cat" id="katalog">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-01</span>
       <h2 data-i18n="sec.catalog">Каталог продукции</h2>
       <div class="div-line"></div>
     </div>
@@ -518,7 +499,6 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="cat" id="raboty">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-02</span>
       <h2 data-i18n="sec.works">Работы</h2>
       <div class="div-line"></div>
     </div>
@@ -528,23 +508,9 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 </section>
 
 <!-- ПРОИЗВОДСТВО -->
-<!-- МОНТАЖ В ТОРГОВЫХ ТОЧКАХ (фотоотчёты) -->
-<section class="cat" id="montazh">
-  <div class="wrap">
-    <div class="divider">
-      <span class="div-tab">SA-03</span>
-      <h2 data-i18n="sec.field">В торговых точках</h2>
-      <div class="div-line"></div>
-    </div>
-    <p class="sec-note" data-i18n="sec.field.note">Фотоотчёты с монтажа: те же конструкции уже стоят и работают в магазинах Алматы, Астаны, Костаная, Атырау и других городов. Съёмка нашей монтажной группы на объектах.</p>
-    <div class="field-grid" id="fieldGrid"></div>
-  </div>
-</section>
-
 <section class="cat" id="proizvodstvo">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-04</span>
       <h2 data-i18n="sec.prod">Производственная база</h2>
       <div class="div-line"></div>
     </div>
@@ -597,7 +563,6 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="cat" id="process">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-05</span>
       <h2 data-i18n="sec.process">Полный цикл</h2>
       <div class="div-line"></div>
     </div>
@@ -618,7 +583,6 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="cat" id="start">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-06</span>
       <h2 data-i18n="sec.start">С чего начать</h2>
       <div class="div-line"></div>
     </div>
@@ -652,7 +616,6 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="cat" id="kontakty">
   <div class="wrap">
     <div class="divider">
-      <span class="div-tab">SA-07</span>
       <h2 data-i18n="sec.contacts">Контакты</h2>
       <div class="div-line"></div>
     </div>
@@ -699,7 +662,6 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
   <div class="cat-head">
     <div class="cat-head-in">
       <button class="cat-back" type="button" id="catBack">← <span data-i18n="cat.back">Каталог</span></button>
-      <span class="div-tab" id="catTag"></span>
     </div>
   </div>
   <div class="cat-body">
@@ -732,9 +694,6 @@ kz: {
   "nav.catalog":"Каталог","nav.works":"Жұмыстар","nav.production":"Өндіріс","nav.cycle":"Толық цикл","nav.start":"Қалай бастау","nav.contacts":"Байланыс","nav.wa":"WhatsApp",
   "sec.works":"Жұмыстар",
   "sec.works.note":"FMCG және тұрмыстық техникаға арналған таңдаулы жобалар. Үлкейту үшін басыңыз; көбірек фото — каталог санаттарының ішінде.",
-  "nav.field":"Нүктелерде",
-  "sec.field":"Сауда нүктелерінде",
-  "sec.field.note":"Монтаж фотоесептері: сол құрылымдар Алматы, Астана, Қостанай, Атырау және басқа қалалардың дүкендерінде тұр және жұмыс істеп жатыр. Нысандардағы монтаж тобымыздың түсірілімі.",
   "hero.title":"<em>POSM</em> және жарнамалық құрылымдар өндірісі",
   "hero.sub":"Толық цикл бір шаңырақ астында: дизайн мен сызбадан басып шығару, монтаж және сервиске дейін. Алматыдағы меншікті цех — 1000 м².",
   "hero.cta1":"WhatsApp арқылы есеп алу","hero.cta2":"Каталогты ашу",
@@ -788,9 +747,6 @@ en: {
   "nav.catalog":"Catalog","nav.works":"Our work","nav.production":"Facility","nav.cycle":"Full cycle","nav.start":"Getting started","nav.contacts":"Contacts","nav.wa":"WhatsApp",
   "sec.works":"Our work",
   "sec.works.note":"Selected projects for FMCG and home appliances. Click to zoom; more photos inside catalog categories.",
-  "nav.field":"In stores",
-  "sec.field":"In stores",
-  "sec.field.note":"Installation photo reports: the same units already stand and work in stores across Almaty, Astana, Kostanay, Atyrau and other cities. Shot by our installation crews on site.",
   "hero.title":"<em>POSM</em> &amp; retail display manufacturing",
   "hero.sub":"Full cycle under one roof: from design and drawings to printing, installation and service. Our own 1,000 m² facility in Almaty.",
   "hero.cta1":"Get a quote on WhatsApp","hero.cta2":"Open the catalog",
@@ -954,7 +910,6 @@ function setLang(lang){
   });
   renderCatalog();
   renderGallery();
-  renderField();
   const open = currentSlug();
   if(open) renderCatPage(open);
   try{ localStorage.setItem("sa-lang", lang); }catch(e){}
@@ -1011,44 +966,6 @@ const GALLERY = [
   {src:"sign-europharma-facade", slug:"light", cap:"Europharma"},
   {src:"island-factory", slug:"island", cap:"M&M's · Snickers · Twix"}
 ];
-/* ── фотоотчёты с монтажа ── */
-const FIELD = [
-  {src:"field-oldspice-horse",cap:"Old Spice · промо-выкладка"},
-  {src:"field-newyear-kostanay",cap:"Новогодняя выкладка · Костанай"},
-  {src:"field-lenor-flowers",cap:"Lenor · Костанай"},
-  {src:"field-gillette-almaty",cap:"Gillette · Алматы"},
-  {src:"field-fairy-plates",cap:"Fairy · Атырау"},
-  {src:"field-gillette-t",cap:"Gillette · Алматы"},
-  {src:"field-pg-bonus",cap:"Gillette · P&G bonus"},
-  {src:"field-pampers-pantene",cap:"Pampers · Pantene"},
-  {src:"field-checkout-1",cap:"Прикассовая зона"},
-  {src:"field-checkout-2",cap:"Прикассовая зона"},
-  {src:"field-checkout-3",cap:"Прикассовые стеллажи"},
-  {src:"field-gillette-shelf",cap:"Gillette · полочная зона"},
-  {src:"field-sulpak-grill",cap:"Sulpak · торцевой дисплей"},
-  {src:"field-tefal-zone",cap:"Tefal · зона бытовой техники"},
-  {src:"field-pampers-endcap",cap:"Pampers · торцевая выкладка"},
-  {src:"field-gillette-category",cap:"Gillette · категорийное оформление"},
-  {src:"field-sweets-rack",cap:"Кондитерская выкладка"},
-  {src:"field-store-hall",cap:"Оснащение торгового зала"}
-];
-const FIELD_CAP = {ru:"Фотоотчёт с монтажа",kz:"Монтаж фотоесебі",en:"Installation photo report"};
-function fieldCat(){
-  return {name:{ru:FIELD_CAP.ru,kz:FIELD_CAP.kz,en:FIELD_CAP.en}, photos:FIELD};
-}
-function renderField(){
-  const g = document.getElementById("fieldGrid");
-  g.innerHTML = "";
-  FIELD.forEach((f,i)=>{
-    const b = document.createElement("button");
-    b.className = "field"; b.type = "button";
-    b.innerHTML = '<img src="assets/'+f.src+'.webp" srcset="assets/'+f.src+'-800.webp 800w, assets/'+f.src+'.webp 1600w" sizes="(max-width:640px) 50vw, (max-width:980px) 33vw, 280px" alt="'+FIELD_CAP[LANG]+' — '+f.cap+'" loading="lazy">'
-      + '<span>'+f.cap+'</span>';
-    b.addEventListener("click", ()=> openLb(fieldCat(), i, b));
-    g.appendChild(b);
-  });
-}
-
 const workGrid = document.getElementById("workGrid");
 function galleryCat(){
   return {
@@ -1081,8 +998,6 @@ function currentSlug(){
 function renderCatPage(slug){
   const c = CATS.find(x=>x.slug===slug);
   if(!c) return false;
-  const i = CATS.indexOf(c);
-  document.getElementById("catTag").textContent = "SA-01·"+String(i+1).padStart(2,"0");
   document.getElementById("catTitle").textContent = c.name[LANG];
   document.getElementById("catDesc").textContent = c.desc[LANG];
   document.getElementById("catMats").textContent = c.mat[LANG];
@@ -1211,7 +1126,6 @@ document.addEventListener("keydown", e=>{
 /* ── старт ── */
 renderCatalog();
 renderGallery();
-renderField();
 try{
   const saved = localStorage.getItem("sa-lang");
   if(saved && saved!=="ru") setLang(saved);

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <!--
-THESIS: сайт — каталог производителя POSM на столе закупщика; отказ от
-категорийного «тёмного корпоративного лендинга» с иконками, глоу и стеклом.
-OWN-WORLD: графитовый стол шоурума; каталожные листы бумажно-белые; инженерные
-бирки в mono; артикулы разделов и позиций; один синий акцент бренда.
-Oswald + Source Sans 3 + Roboto Mono.
-STORY: procurement-менеджер FMCG открывает каталог позиций, смотрит фото
-реальных проектов внутри категории, пишет в WhatsApp за расчётом по ТЗ.
-FIRST VIEWPORT: слева — «Производство POSM и рекламных конструкций», короткий
-подзаголовок полного цикла, два CTA; справа — слайдер фотографий работ;
-внизу бирка ТОО · Алматы · установка и сервис по всему Казахстану.
-FORM: каталог с вкладками-разделителями; позиции каталога открываются
-как страницы категорий (hash-роутинг #katalog/slug, кнопка «назад» работает).
-Веер образцов заменён слайдером по решению владельца (26.07.2026).
+THESIS: сайт — белый зал галереи, где каждое изделие стоит как экспонат под
+музейной подписью; отказ от тёмного фона (фото на белом читались провалами)
+и от светлого корпоративного B2B с иконками в одинаковых цветных карточках.
+OWN-WORLD: тёплая белая стена (#f7f6f4), белые витрины с волосяной рамкой,
+изделие с контактной тенью под собой, музейная подпись под кадром, воздух
+и тонкие линии вместо заливок; синий только в ссылках. Golos Text, углы 2px.
+STORY: procurement-менеджер FMCG видит экспонаты и бренды, открывает категорию
+каталога как зал, пишет в WhatsApp за расчётом по ТЗ.
+FIRST VIEWPORT: слева надзаголовок «Алматы · производство полного цикла»,
+крупный заголовок, подзаголовок, две кнопки; справа витрина со слайдером работ;
+ниже лента цифр 2021 / 1000 м² / 50 / 2000+ над волосяной линией.
+FORM: белый зал — выбран владельцем 26.07.2026 (вариант A из трёх макетов).
+Артикулы SA-NN/T-NN/S-NN и блок фотоотчётов убраны его решением.
+Категории каталога открываются страницами через hash-роутинг #katalog/slug.
 -->
 <html lang="ru">
 <head>
@@ -26,370 +27,355 @@ FORM: каталог с вкладками-разделителями; пози�
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --desk:#16181d;
-  --raised:#1d2026;
-  --edge:#2b2f37;
-  --sheet:#f4f2ed;
-  --ink:#f2f3f5;
-  --body:#c6cad2;
-  --tag:#8f97a5;
-  --caption:#d6dae0;
+  /* — стена зала — */
+  --wall:#f7f6f4;
+  --wall-2:#efedea;
   --white:#ffffff;
-  --blue:#2775e2;
-  --blue-fill:#1f6ad4;
-  --blue-deep:#1a5cb8;
-  --blue-bright:#82b2f4;
-  --sheet-ink:#1d2026;
-  --sheet-ink-2:#454b54;
-  --sheet-ink-3:#5a6068;
-  --steel-hi:#c6ccd4;--steel-deep:#5c636e;
-  --plate-edge:#3a4048;--plate-hi:#262a31;--plate-lo:#1c1f25;--plate-digit:#e8eaee;
-  --scrim:rgba(10,12,15,.94);
-  --scrim-soft:rgba(10,12,15,.88);
-  --sh-1:rgba(0,0,0,.25);
-  --sh-2:rgba(0,0,0,.45);
-  --sh-3:rgba(0,0,0,.6);
-  --sh-4:rgba(0,0,0,.7);
-  --disp:"Oswald","Arial Narrow",sans-serif;
-  --text:"Source Sans 3","Segoe UI",sans-serif;
-  --mono:"Roboto Mono",Consolas,monospace;
-  --fs-display:clamp(2.1rem,4.3vw,3.4rem);
-  --fs-h2:clamp(1.6rem,3.5vw,2.4rem);
-  --fs-plate:clamp(1.7rem,3.4vw,2.6rem);
-  --fs-h3:1.35rem;
-  --fs-lead:1.125rem;
+  --ink:#16181c;
+  --ink-2:#5b6068;
+  --line:#dcd9d4;
+  --line-2:#c9c5be;
+  --accent:#1a5cba;
+  --accent-2:#1f6ad4;
+  --accent-deep:#134a99;
+  /* — шрифт — */
+  --text:"Golos Text",system-ui,sans-serif;
+  /* — шкала — */
+  --fs-display:clamp(2.5rem,5.2vw,3.75rem);
+  --fs-h2:clamp(1.65rem,3vw,2.15rem);
+  --fs-h3:1.25rem;
+  --fs-stat:clamp(1.5rem,2.6vw,1.875rem);
+  --fs-lead:1.1875rem;
   --fs-body:1.0625rem;
-  --fs-small:.95rem;
-  --fs-note:.875rem;
-  --fs-mono:.8rem;
-  --fs-mono-sm:.72rem;
-  --w:1180px;
+  --fs-small:0.9375rem;
+  --fs-note:0.875rem;
+  --fs-micro:0.75rem;
+  /* — формы: зал прямоуголен — */
+  --r-xs:2px;
+  --r-sm:4px;
+  /* — свет: тень только под предметом — */
+  --sh-obj:0 26px 22px rgba(20,22,26,.13);
+  --sh-obj-sm:0 14px 14px rgba(20,22,26,.10);
+  --w:1220px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--desk);
-  color:var(--body);
-  font-family:var(--text);
-  font-size:var(--fs-body);
-  line-height:1.6;
+  background:var(--wall);color:var(--ink);
+  font-family:var(--text);font-size:var(--fs-body);line-height:1.55;
   -webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;display:block}
-a{color:var(--blue-bright);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
-h1,h2,h3{color:var(--ink);font-family:var(--disp);font-weight:600;text-wrap:balance}
-:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-deep)}
+h1,h2,h3{font-weight:600;letter-spacing:-.025em;text-wrap:balance}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 40px}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:var(--r-xs)}
 
 /* ── шапка ── */
 header.top{
   position:sticky;top:0;z-index:50;
-  background:var(--scrim-soft);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--edge);
+  background:rgba(247,246,244,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
 }
-.top-in{display:flex;align-items:center;gap:28px;max-width:var(--w);margin:0 auto;padding:14px 24px}
-.logo{display:flex;align-items:center}
-.logo img{height:34px;width:auto}
-nav.menu{display:flex;gap:22px;margin-left:auto}
-nav.menu a{color:var(--body);font-size:var(--fs-small);padding:6px 2px}
-nav.menu a:hover{color:var(--ink);text-decoration:none}
-.langs{display:flex;border:1px solid var(--edge);border-radius:4px;overflow:hidden}
+.top-in{display:flex;align-items:center;gap:32px;max-width:var(--w);margin:0 auto;padding:18px 40px}
+.logo{display:block;flex:none}
+.logo img{height:32px;width:auto}
+nav.menu{display:flex;gap:28px;margin-left:auto}
+nav.menu a{color:var(--ink-2);font-size:var(--fs-small)}
+nav.menu a:hover{color:var(--ink)}
+.langs{display:flex;gap:4px;flex:none}
 .langs button{
-  background:none;border:0;color:var(--tag);font-family:var(--mono);font-size:var(--fs-mono);
-  padding:7px 11px;cursor:pointer;min-width:44px;min-height:36px;
+  background:none;border:0;color:var(--line-2);font-family:var(--text);
+  font-size:var(--fs-micro);font-weight:600;letter-spacing:.14em;
+  padding:8px 6px;min-width:44px;min-height:40px;cursor:pointer;
 }
-.langs button+button{border-left:1px solid var(--edge)}
-.langs button[aria-pressed="true"]{background:var(--blue-fill);color:var(--white)}
-.langs button:hover:not([aria-pressed="true"]){color:var(--ink)}
+.langs button[aria-pressed="true"]{color:var(--ink)}
+.langs button:hover:not([aria-pressed="true"]){color:var(--ink-2)}
 .top-wa{
-  display:inline-block;background:var(--blue-fill);color:var(--white);font-weight:600;font-size:var(--fs-small);
-  padding:9px 18px;border-radius:4px;white-space:nowrap;
+  flex:none;background:var(--ink);color:var(--white);font-weight:600;font-size:var(--fs-small);
+  padding:12px 22px;border-radius:var(--r-xs);white-space:nowrap;
 }
-.top-wa:hover{background:var(--blue-deep);text-decoration:none}
+.top-wa:hover{background:var(--accent-deep);color:var(--white)}
 
-/* ── hero ── */
-.hero{padding:64px 0 40px}
-.hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
-.hero h1{font-size:var(--fs-display);line-height:1.05;letter-spacing:.01em;text-transform:uppercase}
-.hero h1 em{font-style:normal;color:var(--blue-bright)}
-.hero .sub{margin:24px 0 30px;max-width:52ch;font-size:var(--fs-lead)}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+/* ── кнопки ── */
 .btn{
-  display:inline-block;font-weight:700;font-size:var(--fs-body);border-radius:4px;
-  padding:14px 28px;min-height:48px;border:0;cursor:pointer;
+  display:inline-block;font-weight:600;font-size:var(--fs-body);
+  padding:16px 27px;border-radius:var(--r-xs);min-height:54px;
 }
-.btn-blue{background:var(--blue-fill);color:var(--white)}
-.btn-blue:hover{background:var(--blue-deep);text-decoration:none}
-.btn-ghost{border:1px solid var(--edge);color:var(--ink);background:var(--raised)}
-.btn-ghost:hover{border-color:var(--tag);text-decoration:none}
-.hero-tag{
-  margin-top:36px;display:inline-flex;align-items:center;gap:10px;max-width:100%;
-  font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);
-  border:1px solid var(--edge);border-radius:4px;padding:7px 12px;background:var(--raised);
-}
-.hero-tag::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.btn-blue{background:var(--ink);color:var(--white)}
+.btn-blue:hover{background:var(--accent-deep);color:var(--white)}
+.btn-ghost{border:1px solid var(--line-2);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
 
-/* ── слайдер ── */
-.slider{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 10px 32px var(--sh-2);background:var(--raised)}
-.sl-track{display:flex;transition:transform .5s cubic-bezier(.25,.7,.3,1)}
-.sl-slide{min-width:100%;position:relative;margin:0}
-.sl-slide img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:var(--white)}
+/* ── hero: экспонат у стены ── */
+.hero{padding:104px 0 0}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.82fr);gap:58px;align-items:end}
+.hero-tag{
+  display:block;font-size:var(--fs-micro);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-2);margin-bottom:26px;
+}
+.hero h1{font-size:var(--fs-display);line-height:1.03;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--accent-2)}
+.hero .sub{margin:28px 0 36px;font-size:var(--fs-lead);color:var(--ink-2);max-width:45ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* витрина: изделие на белом, волосяная рамка, контактная тень */
+.slider{position:relative;min-width:0}
+.sl-view{overflow:hidden;background:var(--white);border:1px solid var(--line)}
+.sl-track{display:flex;transition:transform .62s cubic-bezier(.16,1,.3,1)}
+.sl-slide{flex:0 0 100%}
+.sl-slide img{
+  width:100%;height:auto;aspect-ratio:16/11;object-fit:contain;
+  padding:24px 26px 20px;filter:drop-shadow(var(--sh-obj-sm));
+}
 .sl-slide figcaption{
-  position:absolute;left:0;right:0;bottom:0;padding:36px 16px 12px 16px;
-  background:linear-gradient(transparent,var(--scrim-soft));
-  font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--caption);letter-spacing:.02em;
-  padding-right:120px;
+  padding:15px 26px 19px;font-size:var(--fs-note);color:var(--ink-2);
+  border-top:1px solid var(--line);
 }
 .sl-btn{
-  position:absolute;top:50%;transform:translateY(-50%);z-index:2;
-  width:44px;height:44px;border-radius:50%;border:1px solid var(--edge);
-  background:var(--scrim-soft);color:var(--ink);font-size:var(--fs-lead);cursor:pointer;
+  position:absolute;top:40%;width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.94);border:1px solid var(--line);color:var(--ink);
+  font-size:var(--fs-lead);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
 }
-.sl-btn:hover{border-color:var(--tag)}
-.sl-prev{left:10px}
-.sl-next{right:10px}
-.sl-dots{position:absolute;right:14px;bottom:14px;z-index:2;display:flex;gap:8px}
+.sl-btn:hover{border-color:var(--line-2)}
+.sl-prev{left:-14px}
+.sl-next{right:-14px}
+.sl-dots{display:flex;gap:8px;justify-content:center;margin-top:20px}
 .sl-dots button{
-  width:10px;height:10px;padding:0;border-radius:50%;border:1px solid var(--caption);
-  background:transparent;cursor:pointer;
+  width:7px;height:7px;padding:0;border:0;border-radius:50%;
+  background:var(--line-2);cursor:pointer;
 }
-.sl-dots button[aria-current="true"]{background:var(--blue-bright);border-color:var(--blue-bright)}
+.sl-dots button[aria-current="true"]{background:var(--ink)}
 
-/* ── штампованная пластина цифр ── */
-.plate{margin:56px 0 0;position:relative}
-.plate-in{
-  position:relative;
-  border:1px solid var(--plate-edge);border-radius:6px;
-  background:
-    repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 1px,transparent 1px 4px),
-    linear-gradient(170deg,var(--plate-hi),var(--plate-lo) 70%);
-  box-shadow:0 8px 26px var(--sh-2),inset 0 1px 0 rgba(255,255,255,.06);
-  display:grid;grid-template-columns:repeat(4,1fr);
-  padding:8px 0;
-}
-.plate-cell{padding:26px 20px;text-align:center;position:relative}
-.plate-cell+.plate-cell::before{
-  content:"";position:absolute;left:0;top:22%;bottom:22%;width:1px;
-  background:linear-gradient(180deg,transparent,var(--plate-edge),transparent);
-}
-.plate-cell b{
-  display:block;font-family:var(--disp);font-weight:600;font-size:var(--fs-plate);
-  color:var(--plate-digit);letter-spacing:.03em;
-  text-shadow:0 1px 0 rgba(255,255,255,.09),0 -1px 1px var(--sh-4);
-}
-.plate-cell span{font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);letter-spacing:.05em}
-.plate-in::before,.plate-in::after{
-  content:"";position:absolute;width:8px;height:8px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,var(--steel-hi),var(--steel-deep));
-  box-shadow:0 1px 2px var(--sh-4);
-}
-.plate-in::before{top:10px;left:12px}
-.plate-in::after{top:10px;right:12px}
+/* лента цифр */
+.plate{margin:82px 0 0}
+.plate-in{display:flex;gap:64px;flex-wrap:wrap;padding:30px 0 0;border-top:1px solid var(--line)}
+.plate-cell b{display:block;font-size:var(--fs-stat);font-weight:600;letter-spacing:-.03em}
+.plate-cell span{font-size:var(--fs-note);color:var(--ink-2)}
 
-/* ── вкладка-разделитель секции ── */
-section.cat{padding:96px 0 0}
-.divider{display:flex;align-items:flex-end;gap:0;margin-bottom:34px}
-.div-tab{
-  background:var(--blue-fill);color:var(--white);font-family:var(--mono);font-size:var(--fs-mono);
-  letter-spacing:.06em;padding:9px 16px 8px;border-radius:6px 6px 0 0;
-  box-shadow:0 -4px 14px var(--sh-1);white-space:nowrap;
+/* ── залы ── */
+section.cat{padding:112px 0 0}
+section.cat:last-of-type{padding-bottom:20px}
+.divider{
+  display:flex;align-items:baseline;gap:24px;
+  border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:24px;
 }
-.div-line{flex:1;border-bottom:2px solid var(--edge)}
-.divider h2{
-  font-size:var(--fs-h2);font-weight:500;letter-spacing:.02em;
-  text-transform:uppercase;margin-left:18px;padding-bottom:6px;border-bottom:2px solid var(--edge);
-}
-.sec-note{max-width:68ch;margin-bottom:36px;color:var(--body)}
+.divider h2{font-size:var(--fs-h2);flex:none}
+.div-line{flex:1}
+.sec-note{max-width:64ch;margin-bottom:56px;color:var(--ink-2);font-size:var(--fs-lead)}
 
-/* ── каталог позиций ── */
-.toc{border-top:1px solid var(--edge)}
+/* ── каталог: строки зала ── */
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:0 44px}
 .toc-row{
-  display:grid;grid-template-columns:64px minmax(0,1fr) 230px 110px 20px;
-  gap:20px;align-items:baseline;
-  padding:19px 6px;border-bottom:1px solid var(--edge);
+  display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;
+  padding:22px 4px;border-bottom:1px solid var(--line);
   color:inherit;
 }
-.toc-row:hover{background:var(--raised);text-decoration:none}
-.toc-num{font-family:var(--mono);font-size:var(--fs-mono);color:var(--blue-bright)}
-.toc-name{font-family:var(--disp);font-weight:500;font-size:var(--fs-lead);color:var(--ink);letter-spacing:.02em}
-.toc-mat{font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--tag);letter-spacing:.02em}
-.toc-count{font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--tag);text-align:right;white-space:nowrap}
-.toc-count.has{color:var(--blue-bright)}
-.toc-arrow{color:var(--tag);font-family:var(--mono)}
-.toc-row:hover .toc-arrow{color:var(--ink)}
+.toc-row>span:first-child{transition:transform .22s}
+.toc-row:hover>span:first-child{transform:translateX(10px)}
+.toc-name{display:block;font-size:var(--fs-body);font-weight:600;letter-spacing:-.015em;margin-bottom:4px}
+.toc-row:hover .toc-name{color:var(--accent)}
+.toc-desc{display:block;font-size:var(--fs-small);color:var(--ink-2);line-height:1.45}
+.toc-mat{display:block;font-size:var(--fs-note);color:var(--ink-2);margin-top:7px;opacity:.8}
+.toc-go{flex:none;color:var(--line-2);font-size:var(--fs-lead);transition:color .2s}
+.toc-row:hover .toc-go{color:var(--accent)}
 
 /* бренды */
-.brands{margin-top:46px;border:1px solid var(--edge);border-radius:6px;background:var(--raised);padding:22px 26px}
-.brands p:first-child{font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);letter-spacing:.06em;margin-bottom:10px}
-.brands-row{display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--disp);font-weight:500;font-size:var(--fs-body);letter-spacing:.05em;color:var(--ink);text-transform:uppercase}
-.brands-row span{opacity:.85}
+.brands{margin-top:56px}
+.brands p:first-child{
+  font-size:var(--fs-micro);color:var(--ink-2);letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:16px;
+}
+.brands-row{
+  display:flex;flex-wrap:wrap;gap:8px 28px;
+  font-size:var(--fs-small);font-weight:500;color:var(--ink);
+}
+.brands-row span{opacity:.7}
 
-/* ── страница категории ── */
-.cat-page{
-  position:fixed;inset:0;z-index:60;background:var(--desk);
-  overflow-y:auto;display:none;
-}
-.cat-page.on{display:block}
-.cat-head{
-  position:sticky;top:0;z-index:5;background:var(--scrim-soft);backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--edge);
-}
-.cat-head-in{display:flex;align-items:center;gap:18px;max-width:var(--w);margin:0 auto;padding:14px 24px}
-.cat-back{
-  display:inline-flex;align-items:center;gap:8px;color:var(--body);
-  font-size:var(--fs-small);border:1px solid var(--edge);border-radius:4px;
-  background:var(--raised);padding:9px 16px;cursor:pointer;font-family:var(--text);
-}
-.cat-back:hover{color:var(--ink);border-color:var(--tag);text-decoration:none}
-.cat-head-in .div-tab{border-radius:4px;box-shadow:none;padding:7px 12px}
-.cat-body{padding:44px 0 96px}
-.cat-body h2{font-size:var(--fs-h2);font-weight:500;text-transform:uppercase;letter-spacing:.02em;margin-bottom:14px}
-.cat-desc{max-width:68ch;margin-bottom:10px}
-.cat-mats{font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);margin-bottom:36px}
-.cat-empty{
-  border:1px dashed var(--edge);border-radius:6px;background:var(--raised);
-  padding:28px;max-width:640px;margin-bottom:36px;
-}
-.cat-cta{margin-top:44px;border:1px solid var(--edge);border-radius:6px;background:var(--raised);padding:28px;max-width:640px}
-.cat-cta p{margin-bottom:20px}
-
-/* каталожные листы (фото) */
-.sheets{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+/* ── экспонаты: изделие в витрине, музейная подпись под ней ── */
+.sheets{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 40px}
 .sheet{
-  background:var(--sheet);border-radius:6px;overflow:hidden;cursor:zoom-in;
-  border:0;padding:0;text-align:left;font:inherit;
-  box-shadow:0 6px 24px var(--sh-2);
-  transition:transform .25s,box-shadow .25s;
-  display:flex;flex-direction:column;
+  background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;
+  cursor:zoom-in;display:flex;flex-direction:column;
 }
-.sheet:hover{transform:translateY(-4px);box-shadow:0 14px 36px var(--sh-3)}
-/* изделие показываем целиком: вертикальные стойки не режем кадрированием */
-.sheet img{width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;background:var(--white)}
-.sheet-cap{padding:12px 16px 13px;font-size:var(--fs-note);color:var(--sheet-ink-2)}
+.sheet img{
+  width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;
+  background:var(--white);border:1px solid var(--line);
+  padding:20px 22px 18px;filter:drop-shadow(var(--sh-obj-sm));
+  transition:border-color .22s;
+}
+.sheet:hover img{border-color:var(--line-2)}
+.sheet-cap{padding:18px 2px 0;display:flex;flex-direction:column;gap:3px}
+.sheet-cap b{font-size:var(--fs-small);font-weight:600;letter-spacing:-.015em;line-height:1.3}
+.sheet-cap .br{font-size:var(--fs-note);color:var(--ink-2)}
 
 /* ── производство ── */
-.prod-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;align-items:start}
-.tech-list{display:flex;flex-direction:column;gap:10px}
+.prod-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:52px;align-items:start}
+.tech-list{display:grid}
 .tech-row{
-  display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start;
-  background:var(--raised);border:1px solid var(--edge);border-radius:4px;
-  padding:14px 16px;
+  display:grid;grid-template-columns:42px minmax(0,1fr);gap:18px;align-items:center;
+  padding:17px 2px;border-bottom:1px solid var(--line);
 }
+.tech-row:first-child{border-top:1px solid var(--line)}
 .tech-ico{
-  width:44px;height:44px;border:1px solid var(--edge);border-radius:4px;
-  display:flex;align-items:center;justify-content:center;color:var(--blue-bright);
+  width:42px;height:42px;border:1px solid var(--line);border-radius:var(--r-xs);
+  display:flex;align-items:center;justify-content:center;color:var(--accent-2);
+  background:var(--white);
 }
-.tech-ico svg{width:26px;height:26px}
-.tech-txt i{font-style:normal;font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--blue-bright);margin-right:8px}
-.tech-txt b{color:var(--ink);font-weight:600;font-size:var(--fs-small)}
-.tech-txt span{display:block;font-size:var(--fs-note);color:var(--tag);margin-top:2px}
-.prod-photo{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 10px 32px var(--sh-2)}
-.prod-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1}
-.prod-photo figcaption{
-  position:absolute;left:0;right:0;bottom:0;padding:40px 18px 14px;
-  background:linear-gradient(transparent,var(--scrim-soft));
-  font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--caption);letter-spacing:.02em;
-}
-.mat-line{margin-top:26px;font-family:var(--mono);font-size:var(--fs-mono);color:var(--tag);line-height:2}
-.mat-line b{color:var(--body);font-weight:500}
+.tech-ico svg{width:22px;height:22px}
+.tech-txt b{display:block;font-size:var(--fs-small);font-weight:600;margin-bottom:2px}
+.tech-txt span{display:block;font-size:var(--fs-note);color:var(--ink-2);line-height:1.4}
+.prod-photo{background:var(--white);border:1px solid var(--line)}
+.prod-photo img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.prod-photo figcaption{padding:16px 24px 20px;font-size:var(--fs-note);color:var(--ink-2);border-top:1px solid var(--line)}
+.mat-line{margin-top:34px;font-size:var(--fs-small);color:var(--ink-2);line-height:1.9}
+.mat-line b{color:var(--ink);font-weight:600}
 
-/* ── процесс ── */
-.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:0;border:1px solid var(--edge);border-radius:6px;overflow:hidden}
-.step{
-  background:var(--raised);padding:20px 16px 22px;position:relative;
-  border-left:1px solid var(--edge);
+/* ── полный цикл: семь табличек в ряд ── */
+.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:0;border-top:1px solid var(--line)}
+.step{padding:24px 20px 26px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.step:first-child{border-left:1px solid var(--line)}
+.step i{
+  font-style:normal;display:block;font-size:var(--fs-micro);font-weight:600;
+  letter-spacing:.18em;color:var(--accent-2);margin-bottom:14px;
 }
-.step:first-child{border-left:0}
-.step i{font-style:normal;font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--blue-bright);display:block;margin-bottom:10px}
-.step b{display:block;color:var(--ink);font-family:var(--disp);font-weight:500;font-size:var(--fs-small);letter-spacing:.03em;margin-bottom:8px;text-transform:uppercase}
-.step span{font-size:var(--fs-note);color:var(--tag);line-height:1.45;display:block}
-.steps-note{margin-top:18px;font-size:var(--fs-small);color:var(--body)}
-.steps-note b{color:var(--ink)}
+.step b{display:block;font-size:var(--fs-note);font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
+.step span{display:block;font-size:var(--fs-micro);color:var(--ink-2);line-height:1.5}
+.steps-note{margin-top:26px;font-size:var(--fs-lead);color:var(--ink-2)}
+.steps-note b{color:var(--ink);font-weight:600}
 
-/* ── старт ── */
-.start-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+/* ── с чего начать ── */
+.start-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .start-item{
-  border:1px solid var(--edge);border-radius:6px;background:var(--raised);
-  padding:26px 26px 28px;display:flex;flex-direction:column;gap:10px;
+  background:var(--white);padding:32px 34px 34px;
+  display:flex;flex-direction:column;gap:11px;
 }
-.start-item i{font-style:normal;font-family:var(--mono);font-size:var(--fs-mono);color:var(--blue-bright)}
-.start-item b{color:var(--ink);font-family:var(--disp);font-weight:500;font-size:var(--fs-lead);letter-spacing:.02em}
-.start-item p{font-size:var(--fs-small);flex:1}
-.start-item a{font-weight:700;font-size:var(--fs-small)}
+.start-item i{
+  font-style:normal;font-size:var(--fs-micro);font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent-2);
+}
+.start-item b{font-size:var(--fs-h3);font-weight:600;letter-spacing:-.025em}
+.start-item p{font-size:var(--fs-small);color:var(--ink-2);flex:1}
+.start-item a{font-weight:600;font-size:var(--fs-small)}
 
 /* ── контакты ── */
-.contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:start}
-.contact-list{display:flex;flex-direction:column;gap:20px;font-size:var(--fs-body)}
-.contact-list .lbl{font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--tag);letter-spacing:.1em;display:block;margin-bottom:4px}
-.contact-list a.big{font-family:var(--mono);font-size:var(--fs-lead);color:var(--ink)}
-.contact-note{border:1px solid var(--edge);border-radius:6px;background:var(--raised);padding:28px}
-.contact-note h3{font-size:var(--fs-h3);font-weight:500;letter-spacing:.02em;margin-bottom:12px;text-transform:uppercase}
-.contact-note p{margin-bottom:22px}
-footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
-.foot-in{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;font-family:var(--mono);font-size:var(--fs-mono-sm);color:var(--tag)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:52px;align-items:start}
+.contact-list{display:grid;gap:28px}
+.contact-list .lbl{
+  display:block;font-size:var(--fs-micro);color:var(--ink-2);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:7px;
+}
+.contact-list a.big{font-size:var(--fs-h3);font-weight:500;letter-spacing:-.025em;color:var(--ink)}
+.contact-list a.big:hover{color:var(--accent)}
+.contact-list span:not(.lbl){font-size:var(--fs-small);color:var(--ink-2)}
+.contact-note{background:var(--white);border:1px solid var(--line);padding:34px 36px 36px}
+.contact-note h3{font-size:var(--fs-h3);margin-bottom:12px}
+.contact-note p{margin-bottom:26px;color:var(--ink-2);font-size:var(--fs-small)}
+footer{margin-top:112px;border-top:1px solid var(--line);padding:30px 0 40px}
+.foot-in{display:flex;flex-wrap:wrap;gap:10px 34px;justify-content:space-between;font-size:var(--fs-note);color:var(--ink-2)}
 
-/* ── лайтбокс ── */
+/* ── зал категории ── */
+.cat-page{position:fixed;inset:0;z-index:80;background:var(--wall);overflow-y:auto;display:none}
+.cat-page.on{display:block}
+.cat-head{
+  position:sticky;top:0;z-index:2;background:rgba(247,246,244,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.cat-head-in{max-width:var(--w);margin:0 auto;padding:16px 40px}
+.cat-back{
+  background:var(--white);border:1px solid var(--line);color:var(--ink);
+  font:inherit;font-size:var(--fs-small);font-weight:600;
+  padding:11px 20px;border-radius:var(--r-xs);cursor:pointer;min-height:44px;
+}
+.cat-back:hover{border-color:var(--line-2)}
+.cat-body{padding:64px 0 100px}
+.cat-body h2{font-size:var(--fs-h2);margin-bottom:16px}
+.cat-desc{max-width:62ch;color:var(--ink-2);font-size:var(--fs-lead);margin-bottom:8px}
+.cat-mats{font-size:var(--fs-note);color:var(--ink-2);margin-bottom:52px;opacity:.85}
+.cat-empty{background:var(--white);border:1px solid var(--line);padding:36px;color:var(--ink-2);font-size:var(--fs-small)}
+.cat-cta{
+  margin-top:64px;border-top:1px solid var(--line);padding-top:36px;
+  display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+}
+.cat-cta p{font-size:var(--fs-lead);max-width:50ch}
+
+/* ── лайтбокс: экспонат на стене зала ── */
 .lb{
-  position:fixed;inset:0;z-index:100;background:var(--scrim);
-  display:none;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:24px;
+  position:fixed;inset:0;z-index:100;background:rgba(247,246,244,.98);
+  display:none;align-items:center;justify-content:center;flex-direction:column;gap:20px;padding:30px;
 }
 .lb.on{display:flex}
-.lb img{max-width:min(1200px,94vw);max-height:78vh;border-radius:6px;box-shadow:0 20px 60px var(--sh-4)}
-.lb-cap{font-family:var(--mono);font-size:var(--fs-mono);color:var(--caption);text-align:center;max-width:80ch}
-.lb button{
-  position:absolute;background:var(--raised);border:1px solid var(--edge);color:var(--ink);
-  width:46px;height:46px;border-radius:50%;font-size:var(--fs-lead);cursor:pointer;
+.lb img{
+  max-width:min(1140px,92vw);max-height:74vh;width:auto;
+  background:var(--white);border:1px solid var(--line);padding:26px;
+  filter:drop-shadow(var(--sh-obj));
 }
-.lb button:hover{border-color:var(--tag)}
-.lb-x{top:20px;right:20px}
-.lb-prev{left:16px;top:50%;transform:translateY(-50%)}
-.lb-next{right:16px;top:50%;transform:translateY(-50%)}
+.lb-cap{font-size:var(--fs-small);color:var(--ink-2);text-align:center;max-width:68ch}
+.lb button{
+  position:absolute;background:var(--white);border:1px solid var(--line);color:var(--ink);
+  width:46px;height:46px;border-radius:50%;font-size:var(--fs-lead);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+.lb button:hover{border-color:var(--line-2)}
+.lb-x{top:26px;right:26px}
+.lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+.lb-next{right:20px;top:50%;transform:translateY(-50%)}
+
+/* ── авторский момент: экспонат встаёт на место один раз ── */
+@keyframes riseIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.slider{animation:riseIn .95s cubic-bezier(.16,1,.3,1) .05s both}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .sl-track{transition:none}
-  .sheet{transition:none}
+  .slider{animation:none}
+  .sheet img,.toc-row>span:first-child{transition:none}
 }
 
 /* ── адаптив ── */
-@media (max-width:980px){
-  .hero-in{grid-template-columns:1fr;gap:36px}
-  .prod-grid{grid-template-columns:1fr}
-  .sheets{grid-template-columns:repeat(2,1fr)}
+@media (max-width:1080px){
   .steps{grid-template-columns:repeat(4,1fr)}
-  .step:nth-child(5){border-left:0}
-  .step:nth-child(n+5){border-top:1px solid var(--edge)}
-  .contact-grid{grid-template-columns:1fr}
+  .step:nth-child(4n+1){border-left:1px solid var(--line)}
+  .sheets{grid-template-columns:repeat(2,1fr);gap:48px 34px}
   nav.menu{display:none}
-  .toc-row{grid-template-columns:64px minmax(0,1fr) 110px 20px}
-  .toc-mat{display:none}
+  .langs{margin-left:auto}
+}
+@media (max-width:980px){
+  .wrap{padding:0 28px}
+  .top-in,.cat-head-in{padding:14px 28px}
+  .hero{padding:64px 0 0}
+  .hero-in{grid-template-columns:1fr;gap:48px}
+  .hero h1{max-width:19ch}
+  .sl-prev{left:10px}
+  .sl-next{right:10px}
+  .prod-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .toc{grid-template-columns:1fr;gap:0}
 }
 @media (max-width:640px){
-  .hero{padding:44px 0 24px}
-  .hero .sub{font-size:var(--fs-body)}
-  section.cat{padding:72px 0 0}
-  .plate-in{grid-template-columns:repeat(2,1fr)}
-  .plate-cell:nth-child(3),.plate-cell:nth-child(4){border-top:1px solid var(--plate-edge)}
-  .plate-cell+.plate-cell::before{display:none}
-  .toc-row{grid-template-columns:44px minmax(0,1fr) 20px;gap:8px 12px;padding:15px 4px}
-  .toc-count{grid-column:2;text-align:left}
-  .sheets{grid-template-columns:1fr}
+  .wrap{padding:0 18px}
+  .top-in,.cat-head-in{padding:12px 18px}
+  .logo img{height:27px}
+  .hero{padding:44px 0 0}
+  section.cat{padding:76px 0 0}
+  .hero .sub,.sec-note,.steps-note,.cat-desc,.cat-cta p{font-size:var(--fs-body)}
+  .sec-note{margin-bottom:40px}
+  .btn{width:100%;text-align:center}
+  .plate{margin:56px 0 0}
+  .plate-in{gap:24px 38px}
+  .plate-cell{min-width:38%}
+  .sheets{grid-template-columns:1fr;gap:44px}
   .steps{grid-template-columns:repeat(2,1fr)}
-  .step:nth-child(3),.step:nth-child(5),.step:nth-child(7){border-left:0}
-  .step:nth-child(n+3){border-top:1px solid var(--edge)}
+  .step:nth-child(2n+1){border-left:1px solid var(--line)}
   .start-grid{grid-template-columns:1fr}
+  .start-item{padding:26px 24px 28px}
   .top-wa{display:none}
-  .top-in{gap:12px;padding:12px 16px}
-  .logo img{height:28px}
-  .langs{margin-left:auto}
-  .divider h2{font-size:var(--fs-h3)}
-  .sl-btn{display:none}
-  .sl-slide figcaption{padding-right:70px}
-  .cat-head-in{padding:12px 16px;gap:12px}
+  .lb img{padding:14px}
+  .lb-x{top:14px;right:14px}
+  .cat-body{padding:40px 0 76px}
 }
 </style>
 </head>
@@ -398,7 +384,7 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <header class="top">
   <div class="top-in">
     <a class="logo" href="#" aria-label="S-Advertising Company — на главную">
-      <img src="assets/logo.png" alt="S-Advertising Company" width="513" height="159">
+      <img src="assets/logo-light.png" alt="S-Advertising Company" width="513" height="159">
     </a>
     <nav class="menu" aria-label="Разделы">
       <a href="#katalog" data-i18n="nav.catalog">Каталог</a>
@@ -423,15 +409,16 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
 <section class="hero">
   <div class="wrap hero-in">
     <div>
+      <span class="hero-tag" data-i18n="hero.tag">Алматы · производство полного цикла</span>
       <h1 data-i18n-html="hero.title">Производство <em>POSM</em> и рекламных конструкций</h1>
       <p class="sub" data-i18n="hero.sub">Полный цикл под одной крышей: от дизайна и чертежей до печати, монтажа и сервиса. Собственный цех 1000 м² в Алматы.</p>
       <div class="cta-row">
         <a class="btn btn-blue wa-link" href="https://wa.me/77775774405" data-i18n="hero.cta1">Получить расчёт в WhatsApp</a>
         <a class="btn btn-ghost" href="#katalog" data-i18n="hero.cta2">Открыть каталог</a>
       </div>
-      <p class="hero-tag" data-i18n="hero.tag">ТОО S-Advertising Company · Алматы · установка и сервис по всему Казахстану</p>
     </div>
     <div class="slider" id="slider">
+      <div class="sl-view">
       <div class="sl-track" id="slTrack">
         <figure class="sl-slide">
           <img src="assets/mars-chocolate-factory.webp" srcset="assets/mars-chocolate-factory-800.webp 800w, assets/mars-chocolate-factory.webp 1600w" sizes="(max-width:980px) 100vw, 560px" alt="Островная выкладка «Шоколадная фабрика» для брендов Mars" fetchpriority="high" width="1600" height="893">
@@ -453,6 +440,7 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
           <img src="assets/podium-tefal-oralb.webp" srcset="assets/podium-tefal-oralb-800.webp 800w, assets/podium-tefal-oralb.webp 1600w" sizes="(max-width:980px) 100vw, 560px" alt="Демо-подиумы с подсветкой Tefal и Oral-B" loading="lazy" width="1600" height="893">
           <figcaption data-i18n="sl.5">Демо-подиумы · Tefal, Oral-B</figcaption>
         </figure>
+      </div>
       </div>
       <button class="sl-btn sl-prev" type="button" aria-label="Предыдущий слайд">‹</button>
       <button class="sl-btn sl-next" type="button" aria-label="Следующий слайд">›</button>
@@ -519,35 +507,35 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
       <div class="tech-list">
         <div class="tech-row">
           <span class="tech-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="15" width="18" height="4"/><rect x="8" y="4" width="8" height="6" rx="1"/><path d="M12 10v2"/><path d="M9 13.5v.5M12 13.5v.5M15 13.5v.5"/></svg></span>
-          <div class="tech-txt"><i>T-01</i><b data-i18n="tech.1">Планшетная УФ-печать</b><span data-i18n="tech.1.d">прямая печать: ПЭТ, ПВХ, стекло, акрил</span></div>
+          <div class="tech-txt"><b data-i18n="tech.1">Планшетная УФ-печать</b><span data-i18n="tech.1.d">прямая печать: ПЭТ, ПВХ, стекло, акрил</span></div>
         </div>
         <div class="tech-row">
           <span class="tech-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.5"/><path d="M12 10.5V14"/><path d="M5 14h14l-2 6H7z"/></svg></span>
-          <div class="tech-txt"><i>T-02</i><b data-i18n="tech.2">Широкоформатная печать</b><span data-i18n="tech.2.d">баннерная ткань и винил: наружные и интерьерные задачи</span></div>
+          <div class="tech-txt"><b data-i18n="tech.2">Широкоформатная печать</b><span data-i18n="tech.2.d">баннерная ткань и винил: наружные и интерьерные задачи</span></div>
         </div>
         <div class="tech-row">
           <span class="tech-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 5 6.5 5 9.5a5 5 0 0 1-10 0C7 9.5 9 7 12 3z"/><path d="M10 13a2.5 2.5 0 0 0 2.5 2.5"/></svg></span>
-          <div class="tech-txt"><i>T-03</i><b data-i18n="tech.3">Эко-сольвентная печать</b><span data-i18n="tech.3.d">оракал, текстиль, холст: интерьерная графика</span></div>
+          <div class="tech-txt"><b data-i18n="tech.3">Эко-сольвентная печать</b><span data-i18n="tech.3.d">оракал, текстиль, холст: интерьерная графика</span></div>
         </div>
         <div class="tech-row">
           <span class="tech-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c4-1 3-9 8-9 4 0 3 6 8 5"/><path d="M13 4l3 3-3 3-1.5-1.5L13 7z"/></svg></span>
-          <div class="tech-txt"><i>T-04</i><b data-i18n="tech.4">Контурная резка</b><span data-i18n="tech.4.d">режущий плоттер: аппликации любой формы</span></div>
+          <div class="tech-txt"><b data-i18n="tech.4">Контурная резка</b><span data-i18n="tech.4.d">режущий плоттер: аппликации любой формы</span></div>
         </div>
         <div class="tech-row">
           <span class="tech-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4l-1.5 2h-3L9 7z"/><path d="M11 9v5h2V9"/><path d="M12 14v3"/><path d="M8 20l4-3 4 3"/></svg></span>
-          <div class="tech-txt"><i>T-05</i><b data-i18n="tech.5">Фрезерная обработка (ЧПУ)</b><span data-i18n="tech.5.d">раскрой листовых материалов: акрил, МДФ, ЛДСП</span></div>
+          <div class="tech-txt"><b data-i18n="tech.5">Фрезерная обработка (ЧПУ)</b><span data-i18n="tech.5.d">раскрой листовых материалов: акрил, МДФ, ЛДСП</span></div>
         </div>
         <div class="tech-row">
           <span class="tech-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="5" rx="1"/><path d="M12 8v6"/><path d="M12 14l-3 4M12 14l3 4M12 14v5"/><circle cx="12" cy="14" r=".5"/></svg></span>
-          <div class="tech-txt"><i>T-06</i><b data-i18n="tech.6">Лазерный раскрой</b><span data-i18n="tech.6.d">точный рез и гравировка</span></div>
+          <div class="tech-txt"><b data-i18n="tech.6">Лазерный раскрой</b><span data-i18n="tech.6.d">точный рез и гравировка</span></div>
         </div>
         <div class="tech-row">
           <span class="tech-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17h16"/><path d="M6 17c0-5 2.5-8 6-8s6 3 6 8"/><path d="M9 5v2M12 4v3M15 5v2"/></svg></span>
-          <div class="tech-txt"><i>T-07</i><b data-i18n="tech.7">Вакуумная формовка</b><span data-i18n="tech.7.d">объёмные формы из пластика</span></div>
+          <div class="tech-txt"><b data-i18n="tech.7">Вакуумная формовка</b><span data-i18n="tech.7.d">объёмные формы из пластика</span></div>
         </div>
         <div class="tech-row">
           <span class="tech-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18L8 8l5 8 5-11 3 6"/><circle cx="8" cy="8" r="1.3"/><circle cx="13" cy="16" r="1.3"/><circle cx="18" cy="5" r="1.3"/></svg></span>
-          <div class="tech-txt"><i>T-08</i><b data-i18n="tech.8">3D-гибка металла</b><span data-i18n="tech.8.d">проволочные конструкции: гравити-стойки, каркасы</span></div>
+          <div class="tech-txt"><b data-i18n="tech.8">3D-гибка металла</b><span data-i18n="tech.8.d">проволочные конструкции: гравити-стойки, каркасы</span></div>
         </div>
       </div>
       <figure class="prod-photo">
@@ -589,22 +577,22 @@ footer{margin-top:96px;border-top:1px solid var(--edge);padding:26px 0 34px}
     <p class="sec-note" data-i18n="sec.start.note">Для знакомства не нужен крупный контракт. Выберите удобный первый шаг.</p>
     <div class="start-grid">
       <div class="start-item">
-        <i>S-01</i><b data-i18n="go.1">Расчёт по вашему ТЗ</b>
+        <i data-i18n="go.1.tag">расчёт</i><b data-i18n="go.1">Расчёт по вашему ТЗ</b>
         <p data-i18n="go.1.d">Пришлите техническое задание или макет — вернём конструкцию, материалы, сроки и стоимость.</p>
         <a class="wa-link" href="https://wa.me/77775774405" data-i18n="go.1.a">Отправить ТЗ в WhatsApp →</a>
       </div>
       <div class="start-item">
-        <i>S-02</i><b data-i18n="go.2">Контрольный образец</b>
+        <i data-i18n="go.2.tag">образец</i><b data-i18n="go.2">Контрольный образец</b>
         <p data-i18n="go.2.d">Оцените качество производства до каких-либо обязательств: изготовим образец по вашему проекту.</p>
         <a class="wa-link" href="https://wa.me/77775774405" data-i18n="go.2.a">Запросить образец →</a>
       </div>
       <div class="start-item">
-        <i>S-03</i><b data-i18n="go.3">Визит на производство</b>
+        <i data-i18n="go.3.tag">визит</i><b data-i18n="go.3">Визит на производство</b>
         <p data-i18n="go.3.d">Покажем станочный парк и текущие проекты в цехе в Алматы.</p>
         <a class="wa-link" href="https://wa.me/77775774405" data-i18n="go.3.a">Договориться о визите →</a>
       </div>
       <div class="start-item">
-        <i>S-04</i><b data-i18n="go.4">Аккредитация поставщика</b>
+        <i data-i18n="go.4.tag">документы</i><b data-i18n="go.4">Аккредитация поставщика</b>
         <p data-i18n="go.4.d">Работаете через квалификацию поставщиков? Пришлите порядок: оперативно предоставим документы.</p>
         <a href="mailto:zhumabekyessim@gmail.com" data-i18n="go.4.a">Написать на почту →</a>
       </div>
@@ -697,7 +685,7 @@ kz: {
   "hero.title":"<em>POSM</em> және жарнамалық құрылымдар өндірісі",
   "hero.sub":"Толық цикл бір шаңырақ астында: дизайн мен сызбадан басып шығару, монтаж және сервиске дейін. Алматыдағы меншікті цех — 1000 м².",
   "hero.cta1":"WhatsApp арқылы есеп алу","hero.cta2":"Каталогты ашу",
-  "hero.tag":"S-Advertising Company ЖШС · Алматы · монтаж және сервис бүкіл Қазақстан бойынша",
+  "hero.tag":"Алматы · толық циклді өндіріс",
   "sl.1":"Аралдық қойылым · Mars","sl.2":"Паллеттік қойылымдар · P&G","sl.3":"Жарнамалық аркалар · Oral-B, Ariel, Gillette","sl.4":"Едендік дисплейлер · P&G","sl.5":"Демо-подиумдар · Tefal, Oral-B",
   "plate.founded":"құрылған жылы","plate.area":"өндіріс алаңы","plate.staff":"штаттағы маман","plate.projects":"жүзеге асқан жоба",
   "sec.catalog":"Өнім каталогы",
@@ -730,6 +718,7 @@ kz: {
   "process.note":"Әр жобада — <b>бір жауапты менеджер</b>: бір келісімшарт, эскизден сервиске дейін бір жауапкершілік нүктесі.",
   "sec.start":"Неден бастау керек",
   "sec.start.note":"Танысу үшін ірі келісімшарт қажет емес. Ыңғайлы алғашқы қадамды таңдаңыз.",
+  "go.1.tag":"есеп","go.2.tag":"үлгі","go.3.tag":"сапар","go.4.tag":"құжаттар",
   "go.1":"Сіздің ТЗ бойынша есеп","go.1.d":"Техникалық тапсырма немесе макет жіберіңіз — құрылымды, материалдарды, мерзімі мен құнын қайтарамыз.","go.1.a":"ТЗ-ны WhatsApp-қа жіберу →",
   "go.2":"Бақылау үлгісі","go.2.d":"Ешқандай міндеттемесіз өндіріс сапасын бағалаңыз: жобаңыз бойынша үлгі жасаймыз.","go.2.a":"Үлгі сұрату →",
   "go.3":"Өндіріске бару","go.3.d":"Алматыдағы цехта станок паркі мен ағымдағы жобаларды көрсетеміз.","go.3.a":"Сапар туралы келісу →",
@@ -750,7 +739,7 @@ en: {
   "hero.title":"<em>POSM</em> &amp; retail display manufacturing",
   "hero.sub":"Full cycle under one roof: from design and drawings to printing, installation and service. Our own 1,000 m² facility in Almaty.",
   "hero.cta1":"Get a quote on WhatsApp","hero.cta2":"Open the catalog",
-  "hero.tag":"S-Advertising Company LLP · Almaty · installation and service across Kazakhstan",
+  "hero.tag":"Almaty · full-cycle manufacturing",
   "sl.1":"Island display · Mars","sl.2":"Pallet displays · P&G","sl.3":"Promo arches · Oral-B, Ariel, Gillette","sl.4":"Floor displays · P&G","sl.5":"Demo podiums · Tefal, Oral-B",
   "plate.founded":"founded","plate.area":"production floor","plate.staff":"in-house specialists","plate.projects":"completed projects",
   "sec.catalog":"Product catalog",
@@ -783,6 +772,7 @@ en: {
   "process.note":"Every project has <b>one dedicated manager</b>: one contract, one point of responsibility from sketch to service.",
   "sec.start":"Getting started",
   "sec.start.note":"No big contract needed to get acquainted. Pick a comfortable first step.",
+  "go.1.tag":"quote","go.2.tag":"sample","go.3.tag":"visit","go.4.tag":"documents",
   "go.1":"Quote from your spec","go.1.d":"Send a spec or artwork — we'll return the structure, materials, lead time and price.","go.1.a":"Send a spec on WhatsApp →",
   "go.2":"Control sample","go.2.d":"Judge our production quality before any commitment: we'll produce a sample from your project.","go.2.a":"Request a sample →",
   "go.3":"Facility visit","go.3.d":"See the machine fleet and current projects at our Almaty facility.","go.3.a":"Arrange a visit →",
@@ -922,19 +912,19 @@ document.querySelectorAll(".langs button").forEach(b=>{
 const catList = document.getElementById("catList");
 function renderCatalog(){
   catList.innerHTML = "";
-  CATS.forEach((c,i)=>{
+  CATS.forEach(c=>{
     const a = document.createElement("a");
     a.className = "toc-row";
     a.href = "#katalog/"+c.slug;
-    const n = String(i+1).padStart(2,"0");
     const count = c.photos.length
-      ? '<span class="toc-count has">'+c.photos.length+" "+t("cat.photos")+"</span>"
-      : '<span class="toc-count">'+t("cat.page")+"</span>";
-    a.innerHTML = '<span class="toc-num">'+n+'</span>'
-      + '<span class="toc-name">'+c.name[LANG]+'</span>'
-      + '<span class="toc-mat">'+c.mat[LANG]+'</span>'
-      + count
-      + '<span class="toc-arrow" aria-hidden="true">→</span>';
+      ? c.photos.length+" "+t("cat.photos")
+      : t("cat.page");
+    a.innerHTML = '<span>'
+        + '<span class="toc-name">'+c.name[LANG]+'</span>'
+        + '<span class="toc-desc">'+c.desc[LANG]+'</span>'
+        + '<span class="toc-mat">'+c.mat[LANG]+' · '+count+'</span>'
+      + '</span>'
+      + '<span class="toc-go" aria-hidden="true">→</span>';
     catList.appendChild(a);
   });
 }
@@ -983,7 +973,7 @@ function renderGallery(){
     const b = document.createElement("button");
     b.className = "sheet"; b.type = "button";
     b.innerHTML = '<img src="assets/'+g.src+'.webp" srcset="assets/'+g.src+'-800.webp 800w, assets/'+g.src+'.webp 1600w" sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 370px" alt="'+(c?c.name[LANG]:"")+' — '+g.cap+'" loading="lazy">'
-      + '<span class="sheet-cap"><b>'+(c?c.name[LANG]:"")+'</b> · '+g.cap+"</span>";
+      + '<span class="sheet-cap"><b>'+(c?c.name[LANG]:"")+'</b><span class="br">'+g.cap+"</span></span>";
     b.addEventListener("click", ()=> openLb(galleryCat(), i, b));
     workGrid.appendChild(b);
   });
@@ -1012,7 +1002,7 @@ function renderCatPage(slug){
       const b = document.createElement("button");
       b.className = "sheet"; b.type = "button";
       b.innerHTML = '<img src="assets/'+p.src+'.webp" srcset="assets/'+p.src+'-800.webp 800w, assets/'+p.src+'.webp 1600w" sizes="(max-width:640px) 100vw, (max-width:980px) 50vw, 370px" alt="'+c.name[LANG]+' — '+p.cap+'" loading="lazy">'
-        + '<span class="sheet-cap">'+p.cap+"</span>";
+        + '<span class="sheet-cap"><b>'+p.cap+"</b></span>";
       b.addEventListener("click", ()=> openLb(c, pi, b));
       grid.appendChild(b);
     });
